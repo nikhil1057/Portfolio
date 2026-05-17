@@ -179,9 +179,13 @@ run_evaluator() {
   local sprint=$1
   log "Sprint $sprint — Running Evaluator..."
 
-  # Kill any leftover dev server
+  # Kill any leftover dev server and start fresh
   pkill -f "next dev" 2>/dev/null || true
   sleep 2
+  cd "$PROJECT_DIR"
+  nohup npx next dev --port 3000 > /tmp/next-dev.log 2>&1 & disown
+  sleep 10
+  log "Dev server started"
 
   local eval_prompt="$PROJECT_DIR/.harness/tmp-eval-$sprint.md"
   sed "s/SPRINT_NUMBER/$sprint/g" "$PROMPTS_DIR/evaluator.md" > "$eval_prompt"
@@ -190,33 +194,6 @@ run_evaluator() {
 
   # Kill dev server after eval
   pkill -f "next dev" 2>/dev/null || true
-
-  # Check result
-  local eval_file="$PROJECT_DIR/.harness/eval-reports/sprint-${sprint}.md"
-  if [ -f "$eval_file" ] && grep -qi "## Verdict: PASS" "$eval_file"; then
-    set_sprint_state "$sprint" "eval_result" "\"PASS\""
-    set_state "current_phase" "\"contract\""
-    local next=$((sprint + 1))
-    set_state "current_sprint" "$next"
-    success "Sprint $sprint PASSED"
-    return 0
-  else
-    local attempts=$(get_sprint_state "$sprint" "attempts")
-    attempts=${attempts:-0}
-    attempts=$((attempts + 1))
-    set_sprint_state "$sprint" "attempts" "$attempts"
-    set_sprint_state "$sprint" "eval_result" "\"FAIL\""
-    set_sprint_state "$sprint" "generator_done" "False"
-    set_state "current_phase" "\"generator\""
-    warn "Sprint $sprint FAILED (attempt $attempts/$MAX_RETRIES)"
-    if [ $attempts -ge $MAX_RETRIES ]; then
-      warn "Max retries reached — moving to next sprint"
-      set_state "current_phase" "\"contract\""
-      local next=$((sprint + 1))
-      set_state "current_sprint" "$next"
-    fi
-    return 1
-  fi
 }
 
 # ============================================================
@@ -237,30 +214,34 @@ run_sprint() {
   run_contract "$sprint"
 
   # Generator ↔ Evaluator loop
-  local attempts=$(get_sprint_state "$sprint" "attempts")
-  attempts=${attempts:-0}
+  local attempt=0
+  while [ $attempt -lt $MAX_RETRIES ]; do
+    attempt=$((attempt + 1))
+    log "Sprint $sprint — Attempt $attempt/$MAX_RETRIES"
 
-  while [ $attempts -lt $MAX_RETRIES ]; do
-    local phase=$(get_state "current_phase")
+    # Generator
+    run_generator "$sprint"
 
-    if [ "$phase" = "generator" ]; then
-      run_generator "$sprint"
-    fi
-
+    # Evaluator
     run_evaluator "$sprint"
-    local result=$(get_sprint_state "$sprint" "eval_result")
 
-    if [ "$result" = "PASS" ]; then
-      # Merge to main
+    # Check result
+    local eval_file="$PROJECT_DIR/.harness/eval-reports/sprint-${sprint}.md"
+    if [ -f "$eval_file" ] && grep -qi "## Verdict: PASS" "$eval_file"; then
+      success "Sprint $sprint PASSED on attempt $attempt"
       cd "$PROJECT_DIR"
       git checkout main 2>/dev/null || true
       git merge "sprint/$sprint" --no-ff -m "merge: sprint $sprint" 2>/dev/null || true
       return 0
     fi
 
-    attempts=$(get_sprint_state "$sprint" "attempts")
-    attempts=${attempts:-0}
+    warn "Sprint $sprint FAILED (attempt $attempt/$MAX_RETRIES)"
   done
+
+  warn "Max retries reached for sprint $sprint — moving on"
+  cd "$PROJECT_DIR"
+  git checkout main 2>/dev/null || true
+  git merge "sprint/$sprint" --no-ff -m "merge: sprint $sprint (max retries)" 2>/dev/null || true
 }
 
 main() {

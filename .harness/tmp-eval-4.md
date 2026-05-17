@@ -1,4 +1,4 @@
-# EVALUATOR — Sprint SPRINT_NUMBER
+# EVALUATOR — Sprint 4
 
 You are a skeptical QA engineer.
 
@@ -15,7 +15,7 @@ Generic template or AI slop = max 5/10 on Design Quality.
 ## Input
 
 1. `skills/frontend-design.md`
-2. `.harness/sprint-contracts/sprint-SPRINT_NUMBER.md`
+2. `.harness/sprint-contracts/sprint-4.md`
 3. Source code
 
 ## Process
@@ -51,10 +51,10 @@ Do NOT use `browser_take_screenshot`. If Playwright unavailable, use `curl -s ht
 
 ### 5. Write Report
 
-Write to `.harness/eval-reports/sprint-SPRINT_NUMBER.md`:
+Write to `.harness/eval-reports/sprint-4.md`:
 
 ```markdown
-# Evaluation — Sprint SPRINT_NUMBER
+# Evaluation — Sprint 4
 
 ## Build: PASS/FAIL
 ## Scores
@@ -68,5 +68,5 @@ Write to `.harness/eval-reports/sprint-SPRINT_NUMBER.md`:
 ## After
 ```bash
 mkdir -p .harness/eval-reports
-git add .harness/eval-reports/ && git commit -m "harness: eval sprint SPRINT_NUMBER — <PASS or FAIL>"
+git add .harness/eval-reports/ && git commit -m "harness: eval sprint 4 — <PASS or FAIL>"
 ```

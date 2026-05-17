@@ -12,7 +12,7 @@
 - **Email:** nikhiltiwari1057@gmail.com
 - **GitHub:** github.com/nikhil1057
 - **LinkedIn:** linkedin.com/in/nikhiltiwari1057
-- **Experience:** 7+ years
+- **Experience:** 6+ years
 
 ---
 
@@ -22,11 +22,19 @@ Full Stack Developer who builds healthcare platforms by day and AI developer too
 
 ---
 
+## Dual Identity
+
+I have two sides:
+- **Full Stack Developer** — healthcare systems, .NET, Azure, production microservices
+- **AI Engineer** — Mnemo, knowledge graphs, semantic search, harness engineering
+
+---
+
 ## About
 
-I'm a developer who thrives at the intersection of complex backend systems and emerging AI tooling. By day, I architect healthcare microservices that handle real insurance workflows — provider search, eligibility checks, prior authorizations — across multiple payers on Azure. By night, I build Mnemo, an open-source tool that gives AI coding agents persistent memory through knowledge graphs and semantic search.
+I build things at two scales. At work, I architect healthcare microservices that process real insurance workflows — provider search, eligibility checks, prior authorizations — across Aetna, BCBS, Humana, and UHC on Azure. After hours, I build tools that change how developers work with AI — persistent memory systems, knowledge graphs, and autonomous coding harnesses.
 
-I've spent 7 years going deep on .NET, Azure, and healthcare systems. I've designed multi-service architectures, optimized databases, built CI/CD pipelines, and deployed to production. But what excites me most is the frontier — using AI to fundamentally change how developers work.
+Six years of shipping production systems taught me that good architecture is invisible. The best code I've written is code that other developers (and now AI agents) never have to think about — it just works, remembers, and adapts.
 
 ---
 
@@ -221,16 +229,4 @@ Replicated Anthropic's multi-agent harness architecture for autonomous website g
 4. **Production-First Mindset** — Every project has CI/CD, Docker, health checks, audit logging, resilience patterns
 5. **Full-Stack Range** — C# backend, Python APIs, Vue/Angular/React/Next.js frontend, cloud infrastructure
 
----
 
-## Portfolio Website Direction
-
-The portfolio should communicate:
-- A developer who ships real production systems (not just tutorials)
-- Healthcare domain expertise that's rare and valuable
-- AI/open-source work that shows forward-thinking
-- Technical depth (architecture diagrams, not just buzzwords)
-- The contrast: enterprise healthcare by day, cutting-edge AI tools by night
-
-**Tone:** Technical, confident, not flashy. Let the work speak.
-**Aesthetic:** Terminal/developer-focused. Dark theme. Monospace accents. Show code, architecture, real outputs.
