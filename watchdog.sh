@@ -44,22 +44,13 @@ while true; do
 
   log "Status: orch=${ORCH_PID:-dead} kiro=${KIRO_PID:-none} server=${NEXT_PID:-none} idle=${elapsed}s"
 
-  # If stuck: kill server and give kiro time to recover
+  # If stuck: only kill dev server, never kill kiro session
   if [ $elapsed -gt $STUCK_TIMEOUT ]; then
-    log "⚠ STUCK for ${elapsed}s — killing dev server"
-    pkill -f "next dev" 2>/dev/null
-    # Wait 60 seconds for kiro to recover after server kill
-    sleep 60
-
-    # Check if kiro recovered
-    new_commit=$(git log --oneline -1 2>/dev/null)
-    if [ "$new_commit" = "$last_commit" ]; then
-      # Still stuck — kill kiro too
-      log "⚠ Still stuck after 60s — killing kiro session"
-      pkill -f "kiro-cli.*tmp-" 2>/dev/null
-      sleep 5
+    NEXT_PID=$(ps aux | grep "next dev" | grep -v grep | head -1 | awk '{print $2}')
+    if [ -n "$NEXT_PID" ]; then
+      log "⚠ STUCK for ${elapsed}s — killing dev server"
+      pkill -f "next dev" 2>/dev/null
     fi
-
     last_commit_time=$(date +%s)
   fi
 
