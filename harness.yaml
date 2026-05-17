@@ -15,16 +15,14 @@ generator:
 evaluator:
   max_retries: 3
   baselines:
+    - url: "https://www.adhamdannaway.com"
+      why: "PRIMARY INSPIRATION — dual-identity split hero (designer/coder), clean layout, portfolio cards. We adapt this for Full Stack Dev / AI Engineer split."
     - url: "https://brittanychiang.com"
-      why: "Dark minimal, clean typography, scroll reveals, project cards with hover states"
-    - url: "https://cassie.codes"
-      why: "Custom illustrations, playful personality, unique layout"
+      why: "Dark minimal, sticky nav, scroll-triggered sections, clean typography, project cards"
     - url: "https://stefanvitasovic.com"
-      why: "WebGL, typographic animations, page transitions, motion-focused"
+      why: "Typographic animations, page transitions, motion-focused"
     - url: "https://joffreyspitzer.com"
-      why: "Astro+GSAP, minimalist reveals, flip transitions, subtle motion"
-    - url: "https://arnaudrocca.fr"
-      why: "GSAP motion system, fluid WebGL, bold typography"
+      why: "GSAP reveals, minimalist motion, flip transitions"
   criteria:
     - name: design_quality
       weight: 0.30

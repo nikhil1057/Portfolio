@@ -22,11 +22,29 @@ Full Stack Developer who builds healthcare platforms by day and AI developer too
 
 ---
 
+## Dual Identity (Hero Concept — inspired by adhamdannaway.com)
+
+The portfolio hero should present TWO SIDES of Nikhil:
+
+**LEFT SIDE: Full Stack Developer**
+- Tagline: "I build scalable healthcare systems on Azure"
+- Visual: dark/corporate, structured, clean lines
+- Keywords: .NET 8, Azure, Cosmos DB, Microservices, CI/CD
+
+**RIGHT SIDE: AI Engineer**
+- Tagline: "I give AI agents persistent memory"
+- Visual: glowing/futuristic, nodes/graphs, animated connections
+- Keywords: Knowledge Graphs, Semantic Search, MCP, ONNX, Harness Engineering
+
+The split should be visual — like Adham's designer/coder face split — but adapted for a developer (could be a split terminal, split code editor, split architecture diagram, or abstract geometric split). NOT a face photo split — something more creative and code-focused.
+
+---
+
 ## About
 
-I'm a developer who thrives at the intersection of complex backend systems and emerging AI tooling. By day, I architect healthcare microservices that handle real insurance workflows — provider search, eligibility checks, prior authorizations — across multiple payers on Azure. By night, I build Mnemo, an open-source tool that gives AI coding agents persistent memory through knowledge graphs and semantic search.
+I build things at two scales. At work, I architect healthcare microservices that process real insurance workflows — provider search, eligibility checks, prior authorizations — across Aetna, BCBS, Humana, and UHC on Azure. After hours, I build tools that change how developers work with AI — persistent memory systems, knowledge graphs, and autonomous coding harnesses.
 
-I've spent 6 years going deep on .NET, Azure, and healthcare systems. I've designed multi-service architectures, optimized databases, built CI/CD pipelines, and deployed to production. But what excites me most is the frontier — using AI to fundamentally change how developers work.
+Six years of shipping production systems taught me that good architecture is invisible. The best code I've written is code that other developers (and now AI agents) never have to think about — it just works, remembers, and adapts.
 
 ---
 
