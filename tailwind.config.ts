@@ -5,12 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        surface: "#0a0a0a",
-        accent: "#d4a843",
+        surface: "#080b0e",
+        "surface-alt": "#0d1117",
+        "accent-warm": "#e8a838",
+        "accent-cool": "#38bdf8",
       },
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        display: ["Clash Display", "sans-serif"],
+        body: ["Space Mono", "monospace"],
       },
     },
   },
