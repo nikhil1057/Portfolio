@@ -1,5 +1,5 @@
 {
-  "current_sprint": 3,
+  "current_sprint": 4,
   "current_phase": "generator",
   "planner_done": true,
   "sprints": {
@@ -12,6 +12,10 @@
       "generator_done": true
     },
     "3": {
+      "contract_done": true,
+      "generator_done": true
+    },
+    "4": {
       "contract_done": true
     }
   }
