@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --conic-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 :root {
   --surface: #080808;
   --surface-elevated: #111113;
@@ -34,7 +40,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Section reveal (used by About/Experience/Projects with IntersectionObserver) */
+/* Section reveal */
 .section-reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -61,39 +67,24 @@ body::before {
   background: linear-gradient(225deg, rgba(45, 255, 194, 0.06) 0%, transparent 60%);
 }
 
-/* Projects section animations */
-@keyframes borderRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Animated conic gradient border for Mnemo card */
+@keyframes conicRotate {
+  to { --conic-angle: 360deg; }
 }
 
+.mnemo-card {
+  animation: conicRotate 4s linear infinite;
+  background: conic-gradient(from var(--conic-angle), var(--accent-cool), transparent 30%, var(--accent-cool) 50%, transparent 80%, var(--accent-cool));
+}
+
+/* Metric glow pulse */
 @keyframes metricGlow {
   0%, 100% { text-shadow: none; }
   50% { text-shadow: 0 0 12px rgba(45, 255, 194, 0.5); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-border-rotate {
-  animation: borderRotate 4s linear infinite;
-  background-size: 200% 200%;
-}
-
 .metric-glow .font-display {
   animation: metricGlow 0.8s ease-out 1;
-  animation-play-state: paused;
-}
-
-.section-reveal.visible .metric-glow .font-display {
-  animation-play-state: running;
-}
-
-.section-reveal.visible .tech-pill {
-  opacity: 0;
-  animation: fadeUp 0.3s ease-out forwards;
 }
 
 /* Reduced motion */

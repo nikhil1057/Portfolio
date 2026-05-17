@@ -1,36 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
-function AnimatedCounter({ value, suffix = "", duration = 1200 }: { value: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
+function AnimatedCounter({ value, suffix = "", prefix = "", duration = 1.2 }: { value: number; suffix?: string; prefix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting && !started) setStarted(true); },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     const start = performance.now();
+    const ms = duration * 1000;
     const animate = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+      const progress = Math.min((now - start) / ms, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.round(eased * value));
       if (progress < 1) requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
-  }, [started, value, duration]);
+  }, [inView, value, duration]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
 function ExpandableSection({ children, label }: { children: React.ReactNode; label: string }) {
@@ -44,63 +35,58 @@ function ExpandableSection({ children, label }: { children: React.ReactNode; lab
         aria-expanded={expanded}
       >
         {expanded ? "Hide" : "Show"} {label}
-        <span className={`transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}>▾</span>
+        <motion.span animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.3 }}>▾</motion.span>
       </button>
-      <div
-        className="overflow-hidden transition-all duration-300"
-        style={{ maxHeight: expanded ? "600px" : "0", opacity: expanded ? 1 : 0 }}
+      <motion.div
+        initial={false}
+        animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
       >
         <div className="pt-4">{children}</div>
-      </div>
+      </motion.div>
     </div>
   );
 }
 
+const pillContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.05 } } };
+const pillVariant = { hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0, transition: { duration: 0.3 } } };
+
 export default function Projects() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const mnemoRef = useRef<HTMLDivElement>(null);
-  const harnessRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const els = [sectionRef.current, mnemoRef.current, harnessRef.current];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.1 }
-    );
-    els.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   const mnemoTech = ["Python", "ONNX Runtime", "tree-sitter", "NetworkX", "NumPy", "MCP Protocol", "Next.js", "TypeScript"];
   const harnessTech = ["Shell scripting", "Kiro CLI", "Playwright MCP", "Next.js", "Tailwind", "Framer Motion"];
 
   return (
-    <section id="projects" ref={sectionRef} className="section-reveal py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
+    <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
       <div className="relative">
         <h2 className="font-display text-[clamp(4rem,8vw,7rem)] font-bold text-white/[0.03] absolute -top-6 -left-2 select-none pointer-events-none leading-none" aria-hidden="true">
           CRAFT
         </h2>
 
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-16 pt-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="font-display text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-16 pt-8"
+        >
           Projects
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 lg:gap-8 items-start">
-          {/* Mnemo — flagship with animated gradient border */}
-          <div
-            ref={mnemoRef}
-            className="mnemo-card group relative p-[1px] overflow-hidden section-reveal"
-            style={{ transitionDelay: "0.2s" }}
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-10 items-start">
+          {/* Mnemo — flagship with animated conic gradient border */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="mnemo-card group relative rounded-sm"
+            style={{ padding: "2px", background: "conic-gradient(from var(--conic-angle, 0deg), var(--accent-cool), transparent 30%, var(--accent-cool) 50%, transparent 80%, var(--accent-cool))" }}
           >
-            {/* Animated gradient border */}
-            <div className="absolute inset-0 rounded-none bg-gradient-to-r from-accent-cool/40 via-accent-cool/10 to-accent-cool/40 animate-border-rotate" />
-            <div className="relative bg-[var(--surface)] p-8 md:p-10 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(45,255,194,0.08)] transition-all duration-200">
+            <div className="relative bg-[var(--surface)] p-8 md:p-10 lg:p-12">
               {/* Background accent */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-accent-cool/[0.03] rounded-full translate-x-24 -translate-y-24 group-hover:scale-150 transition-transform duration-700" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cool/[0.04] rounded-full translate-x-24 -translate-y-24 group-hover:scale-150 transition-transform duration-700" />
 
               <div className="relative">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-accent-cool font-body">Flagship · Open Source · PyPI</span>
@@ -114,40 +100,73 @@ export default function Projects() {
 
                 {/* Metrics */}
                 <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
-                  <div className="metric-glow">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                    className="metric-glow"
+                  >
                     <span className="block font-display text-xl font-bold text-accent-cool"><AnimatedCounter value={100} suffix="%" /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">recall@5</span>
-                  </div>
-                  <div className="metric-glow">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    className="metric-glow"
+                  >
                     <span className="block font-display text-xl font-bold text-accent-cool"><AnimatedCounter value={2} suffix="ms" /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">latency</span>
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                  >
                     <span className="block font-display text-xl font-bold text-accent-cool"><AnimatedCounter value={8} suffix="x" /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">init speedup</span>
-                  </div>
-                  <div>
-                    <span className="block font-display text-xl font-bold text-accent-cool">14,000+</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    <span className="block font-display text-xl font-bold text-accent-cool"><AnimatedCounter value={14000} suffix="+" /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">lines of Python</span>
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 }}
+                  >
                     <span className="block font-display text-xl font-bold text-accent-cool"><AnimatedCounter value={222} /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">passing tests</span>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Tech stack pills */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {mnemoTech.map((t, i) => (
-                    <span
+                <motion.div
+                  className="mt-6 flex flex-wrap gap-2"
+                  variants={pillContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {mnemoTech.map((t) => (
+                    <motion.span
                       key={t}
-                      className="tech-pill px-2 py-1 text-[9px] uppercase tracking-wider text-accent-cool/70 border border-accent-cool/[0.15] font-body"
-                      style={{ animationDelay: `${i * 0.05}s` }}
+                      variants={pillVariant}
+                      className="px-2 py-1 text-[9px] uppercase tracking-wider text-accent-cool/70 border border-accent-cool/[0.15] font-body"
                     >
                       {t}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
+                </motion.div>
 
                 {/* Expandable details */}
                 <ExpandableSection label="technical details">
@@ -168,15 +187,18 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Kiro Harness — secondary */}
-          <div
-            ref={harnessRef}
-            className="lg:mt-16 section-reveal"
-            style={{ transitionDelay: "0.4s" }}
+          {/* Kiro Harness — secondary, smaller */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="lg:mt-24"
           >
-            <div className="group relative p-8 border border-white/[0.06] bg-white/[0.01] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(232,93,47,0.06)] hover:border-accent-warm/20 transition-all duration-200 overflow-hidden">
+            <div className="group relative p-7 border border-white/[0.06] bg-white/[0.01] hover:shadow-[0_8px_30px_rgba(232,93,47,0.06)] hover:border-accent-warm/20 transition-all duration-200 overflow-hidden">
               <div className="absolute top-0 left-0 w-32 h-32 bg-accent-warm/[0.03] rotate-12 -translate-x-16 -translate-y-16 group-hover:rotate-45 transition-transform duration-700" />
 
               <div className="relative">
@@ -189,7 +211,7 @@ export default function Projects() {
                 </p>
 
                 {/* Metrics */}
-                <div className="mt-5 grid grid-cols-3 gap-4">
+                <div className="mt-5 grid grid-cols-2 gap-4">
                   <div>
                     <span className="block font-display text-xl font-bold text-accent-warm"><AnimatedCounter value={12} /></span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">iterations</span>
@@ -198,24 +220,26 @@ export default function Projects() {
                     <span className="block font-display text-xl font-bold text-accent-warm">3.5 hours</span>
                     <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">to complete</span>
                   </div>
-                  <div>
-                    <span className="block font-display text-xl font-bold text-accent-warm">0</span>
-                    <span className="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-body">manual code</span>
-                  </div>
                 </div>
 
                 {/* Tech stack pills */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {harnessTech.map((t, i) => (
-                    <span
+                <motion.div
+                  className="mt-5 flex flex-wrap gap-2"
+                  variants={pillContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {harnessTech.map((t) => (
+                    <motion.span
                       key={t}
-                      className="tech-pill px-2 py-1 text-[9px] uppercase tracking-wider text-accent-warm/70 border border-accent-warm/[0.15] font-body"
-                      style={{ animationDelay: `${i * 0.05}s` }}
+                      variants={pillVariant}
+                      className="px-2 py-1 text-[9px] uppercase tracking-wider text-accent-warm/70 border border-accent-warm/[0.15] font-body"
                     >
                       {t}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
+                </motion.div>
 
                 {/* Expandable details */}
                 <ExpandableSection label="details">
@@ -235,7 +259,7 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

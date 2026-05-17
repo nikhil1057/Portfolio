@@ -17,8 +17,8 @@ You are a senior frontend engineer building a developer portfolio.
 - If Sprint 1: scaffold the project MANUALLY — write package.json, configs, layout directly. Do NOT use `npx create-next-app` or any interactive CLI.
 - After writing package.json, run `npm install`
 - Use real content from `profile.md`
-- Must build with `npm run build`
-- Must run with `npm run dev`
+- Must pass `npm run build` before committing
+- Do NOT run `npm run dev` or start any server
 
 ## If Retry
 
