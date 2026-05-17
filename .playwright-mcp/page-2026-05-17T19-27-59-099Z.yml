@@ -1,0 +1,291 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation "Main navigation" [ref=e3]:
+      - link "NT." [ref=e4] [cursor=pointer]:
+        - /url: "#home"
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "About" [ref=e7] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e8]:
+          - link "Experience" [ref=e9] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e10]:
+          - link "Projects" [ref=e11] [cursor=pointer]:
+            - /url: "#projects"
+        - listitem [ref=e12]:
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: "#contact"
+    - generic [ref=e14]:
+      - generic:
+        - generic: BUILD
+        - generic: SHIP
+      - generic [ref=e15]:
+        - heading "Nikhil Tiwari" [level=1] [ref=e16]:
+          - text: Nikhil
+          - text: Tiwari
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - text: Full Stack Developer
+            - generic [ref=e19]: Healthcare · Azure · .NET
+          - generic [ref=e20]: "&"
+          - generic [ref=e21]:
+            - text: AI Engineer
+            - generic [ref=e22]: Mnemo · Knowledge Graphs · MCP
+        - paragraph [ref=e23]: Full Stack Developer who builds healthcare platforms by day and AI developer tools by night — shipping production systems on Azure/AWS while creating open-source tools that give AI agents persistent memory.
+        - generic [ref=e24]:
+          - link "GitHub" [ref=e25] [cursor=pointer]:
+            - /url: https://github.com/nikhil1057
+            - img [ref=e26]
+            - generic [ref=e28]: GitHub
+          - link "LinkedIn" [ref=e29] [cursor=pointer]:
+            - /url: https://linkedin.com/in/nikhiltiwari1057
+            - img [ref=e30]
+            - generic [ref=e32]: LinkedIn
+          - link "Email" [ref=e33] [cursor=pointer]:
+            - /url: mailto:nikhiltiwari1057@gmail.com
+            - img [ref=e34]
+            - generic [ref=e37]: Email
+      - img [ref=e39]
+    - generic [ref=e42]:
+      - heading "About" [level=2] [ref=e43]
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - heading "Full Stack Developer" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Healthcare systems, .NET, Azure, production microservices
+        - generic [ref=e49]:
+          - heading "AI Engineer" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Mnemo, knowledge graphs, semantic search, harness engineering
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - paragraph [ref=e55]: I build things at two scales. At work, I architect healthcare microservices that process real insurance workflows — provider search, eligibility checks, prior authorizations — across Aetna, BCBS, Humana, and UHC on Azure.
+          - paragraph [ref=e56]: After hours, I build tools that change how developers work with AI — persistent memory systems, knowledge graphs, and autonomous coding harnesses.
+          - blockquote [ref=e57]: Six years of shipping production systems taught me that good architecture is invisible. The best code I've written is code that other developers (and now AI agents) never have to think about — it just works, remembers, and adapts.
+        - generic [ref=e59]:
+          - heading "By the numbers" [level=4] [ref=e60]
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e64]: 6+
+              - text: Years shipping production
+            - generic [ref=e65]:
+              - generic [ref=e67]: 13,732+
+              - text: Lines in Mnemo
+            - generic [ref=e68]:
+              - generic [ref=e69]: "218"
+              - text: Passing tests
+            - generic [ref=e70]:
+              - generic [ref=e71]: "5"
+              - text: Microservices built from scratch
+            - generic [ref=e72]:
+              - generic [ref=e74]: 98%
+              - text: Search recall@5
+            - generic [ref=e75]:
+              - generic [ref=e76]: "83"
+              - text: Commits as primary architect
+      - generic [ref=e77]:
+        - heading "Technical Skills" [level=4] [ref=e78]
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Languages" [level=5] [ref=e81]
+            - paragraph [ref=e82]: C#, Python, TypeScript/JavaScript, SQL
+          - generic [ref=e83]:
+            - heading "Backend" [level=5] [ref=e84]
+            - paragraph [ref=e85]: .NET Core / .NET 8, FastAPI, ASP.NET Core Web API, Entity Framework
+          - generic [ref=e86]:
+            - heading "Frontend" [level=5] [ref=e87]
+            - paragraph [ref=e88]: Angular, Vue 3, Next.js, React, Tailwind CSS
+          - generic [ref=e89]:
+            - heading "Cloud" [level=5] [ref=e90]
+            - paragraph [ref=e91]: Azure (Cosmos DB, APIM, Functions, Key Vault, Entra ID), AWS (ECS/EKS)
+          - generic [ref=e92]:
+            - heading "AI & Data" [level=5] [ref=e93]
+            - paragraph [ref=e94]: ONNX Runtime, tree-sitter, NetworkX, MCP Protocol
+          - generic [ref=e95]:
+            - heading "Patterns" [level=5] [ref=e96]
+            - paragraph [ref=e97]: Microservices, circuit breakers, cache-first with TTL, payer strategy pattern
+    - generic [ref=e99]:
+      - heading [level=2]: WORK
+      - heading "Experience" [level=2] [ref=e100]
+      - generic [ref=e101]:
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - heading "Odessa Inc." [level=3] [ref=e106]
+            - generic [ref=e107]: April 2019 – September 2022
+          - generic [ref=e108]: Senior Software Engineer · Remote
+          - list [ref=e109]:
+            - listitem [ref=e110]: ▸ Developed API systems using C#, Azure, SQL, .NET Framework/Core, ASP.NET, LINQ for leasing platforms used by Dell and HP
+            - listitem [ref=e111]: ▸ Designed Asset Split feature — migrated complex SQL scripts into maintainable C# classes, improving testability
+            - listitem [ref=e112]: ▸ Built Auto-Payoff, Offline Background Processes, and SKU extensions handling enterprise-scale loan management
+            - listitem [ref=e113]: ▸ Led regression testing and automation test case development, reducing manual QA cycles by 40%
+          - generic [ref=e114]:
+            - generic [ref=e115]: C#
+            - generic [ref=e116]: .NET Framework
+            - generic [ref=e117]: .NET Core
+            - generic [ref=e118]: SQL Server
+            - generic [ref=e119]: Azure
+            - generic [ref=e120]: IIS
+            - generic [ref=e121]: LINQ
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - heading "Sapiens" [level=3] [ref=e126]
+            - generic [ref=e127]: September 2022 – July 2025
+          - generic [ref=e128]: Senior Developer · Bangalore
+          - list [ref=e129]:
+            - listitem [ref=e130]: ▸ Lead developer and main point of contact for ERIE Insurance on Underwriting Pro platform
+            - listitem [ref=e131]: ▸ Initiated API integrations for Farmers Insurance (APP Pro → Underwriting Pro), enabling cross-platform data flow
+            - listitem [ref=e132]: ▸ Drove upgrade projects for Federated, Erie, and AAFMAA — migrating legacy systems to modern .NET Core
+            - listitem [ref=e133]: ▸ Led Angular upgrade for the new version of Underwriting Pro, improving frontend performance and developer experience
+          - generic [ref=e134]:
+            - generic [ref=e135]: C#
+            - generic [ref=e136]: .NET Core
+            - generic [ref=e137]: Angular
+            - generic [ref=e138]: Azure
+            - generic [ref=e139]: Kubernetes
+            - generic [ref=e140]: Docker
+            - generic [ref=e141]: Azure DevOps
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - heading "Availity" [level=3] [ref=e146]
+            - generic [ref=e147]: July 2025 – Present
+          - generic [ref=e148]: Senior Developer · Bangalore
+          - list [ref=e149]:
+            - listitem [ref=e150]: ▸ Designed and built ProviderSearch platform from zero — 5 microservices, Vue 3 UI, Azure Functions, CI/CD pipelines (85 of 181 commits)
+            - listitem [ref=e151]: ▸ Reduced DocumentSearch latency via dual-layer caching system — TTL-based cache with stable JSON hashing at API and Databricks layers
+            - listitem [ref=e152]: ▸ Built X12/EDI eligibility parsing with payer-specific strategy pattern — extensible handler architecture across Aetna, BCBS, Humana, UHC
+            - listitem [ref=e153]: ▸ Architecting cross-cloud MockProxyService on AWS EKS routing to Azure APIM with health-check failover (10s TTL)
+          - generic:
+            - generic [ref=e154]:
+              - heading "ProviderSearch Platform" [level=4] [ref=e155]
+              - list [ref=e156]:
+                - listitem [ref=e157]: 5 microservices with cache-first provider search — Cosmos DB with 1-hour TTL, Polly retry with exponential backoff
+                - listitem [ref=e158]: Payer-specific strategy pattern for X12/EDI eligibility parsing — new payer onboarding without touching existing code
+                - listitem [ref=e159]: Full Mock Payer Testing Platform (Vue 3 SPA + 4 proxy services + Entra ID auth) eliminating payer sandbox dependency
+            - generic [ref=e160]:
+              - heading "DocumentSearch (Gorilla)" [level=4] [ref=e161]
+              - list [ref=e162]:
+                - listitem [ref=e163]: FastAPI REST API for medical/clinical document search in prior authorization workflows
+                - listitem [ref=e164]: Dual-layer caching at API response layer + Databricks query layer with 5-min TTL eviction
+                - listitem [ref=e165]: 7 covering indexes from query plan analysis; OR chains collapsed into single IN clauses — 762 lines of optimization, zero API changes
+          - generic [ref=e166]:
+            - generic [ref=e167]: C# .NET 8
+            - generic [ref=e168]: Python
+            - generic [ref=e169]: FastAPI
+            - generic [ref=e170]: Azure Cosmos DB
+            - generic [ref=e171]: Azure APIM
+            - generic [ref=e172]: AWS EKS
+            - generic [ref=e173]: Vue 3
+            - generic [ref=e174]: Docker
+    - generic [ref=e176]:
+      - heading [level=2]: CRAFT
+      - heading "Projects" [level=2] [ref=e177]
+      - generic [ref=e178]:
+        - generic [ref=e183]:
+          - text: Flagship · Open Source · PyPI
+          - heading "Mnemo" [level=3] [ref=e184]
+          - paragraph [ref=e185]: Persistent Engineering Cognition for AI Agents
+          - paragraph [ref=e186]: "Gives AI coding agents persistent memory, a knowledge graph, and semantic search across sessions. Eliminates context loss — the #1 frustration of AI-assisted development."
+          - generic [ref=e187]:
+            - generic [ref=e188]:
+              - generic [ref=e190]: 27%
+              - text: recall@5
+            - generic [ref=e191]:
+              - generic [ref=e193]: 1ms
+              - text: latency
+            - generic [ref=e194]:
+              - generic [ref=e196]: 2x
+              - text: init speedup
+            - generic [ref=e197]:
+              - generic [ref=e198]: 14,000+
+              - text: lines of Python
+            - generic [ref=e199]:
+              - generic [ref=e200]: "61"
+              - text: passing tests
+          - generic [ref=e201]:
+            - generic [ref=e202]: Python
+            - generic [ref=e203]: ONNX Runtime
+            - generic [ref=e204]: tree-sitter
+            - generic [ref=e205]: NetworkX
+            - generic [ref=e206]: NumPy
+            - generic [ref=e207]: MCP Protocol
+            - generic [ref=e208]: Next.js
+            - generic [ref=e209]: TypeScript
+          - generic [ref=e210]:
+            - button "Show technical details ▾" [ref=e211] [cursor=pointer]:
+              - text: Show technical details
+              - generic [ref=e212]: ▾
+            - generic [ref=e214]:
+              - paragraph [ref=e215]: Triple-stream search engine — fuses ONNX dense embeddings (all-MiniLM-L6-v2), BM25 keyword search, and Dijkstra graph traversal via Reciprocal Rank Fusion for 100% recall.
+              - paragraph [ref=e216]: Natural memory decay — Ebbinghaus-inspired retention scoring (salience × exp(-0.01 × days) + access frequency) with automatic eviction.
+              - paragraph [ref=e217]:
+                - text: Knowledge graph — NetworkX with Leiden community detection.
+                - code [ref=e218]: mnemo_lookup
+                - text: returns full service architecture in one call.
+              - paragraph [ref=e219]: 16 agent-facing tools — consolidated from 60 internal tools. 5 AI client integrations (Kiro, Claude Code, Cursor, Copilot, Amazon Q).
+          - link "View on GitHub →" [ref=e220] [cursor=pointer]:
+            - /url: https://github.com/Mnemo-mcp/Mnemo
+            - generic [ref=e221]: View on GitHub
+            - generic [ref=e222]: →
+        - generic [ref=e226]:
+          - text: Systems Thinking · Multi-Agent
+          - heading "Kiro Harness" [level=3] [ref=e227]
+          - paragraph [ref=e228]: Multi-agent adversarial loop for autonomous website generation
+          - paragraph [ref=e229]: Generator↔Evaluator adversarial architecture producing complete sites through iterative refinements — zero manual coding.
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]: "2"
+              - text: iterations
+            - generic [ref=e233]:
+              - generic [ref=e234]: 3.5 hours
+              - text: to complete
+            - generic [ref=e235]:
+              - generic [ref=e236]: "0"
+              - text: manual code
+          - generic [ref=e237]:
+            - generic [ref=e238]: Shell scripting
+            - generic [ref=e239]: Kiro CLI
+            - generic [ref=e240]: Playwright MCP
+            - generic [ref=e241]: Next.js
+            - generic [ref=e242]: Tailwind
+            - generic [ref=e243]: Framer Motion
+          - generic [ref=e244]:
+            - button "Show details ▾" [ref=e245] [cursor=pointer]:
+              - text: Show details
+              - generic [ref=e246]: ▾
+            - generic [ref=e248]:
+              - paragraph [ref=e249]: Shell-based orchestrator — spawns fresh Kiro CLI sessions per agent with clean-slate architecture and file-based communication.
+              - paragraph [ref=e250]: Playwright MCP integration — evaluator browses the running site headlessly, verifying layout, interactions, and responsive behavior.
+              - paragraph [ref=e251]: Reusable templates — for both frontend (GAN-style iteration loop) and full-stack (sprint-based with contracts) harness architectures.
+          - link "View on GitHub →" [ref=e252] [cursor=pointer]:
+            - /url: https://github.com/Mnemo-mcp/Harness
+            - generic [ref=e253]: View on GitHub
+            - generic [ref=e254]: →
+    - generic [ref=e255]:
+      - generic [ref=e257]:
+        - generic [ref=e258]:
+          - heading "Let's build something." [level=2] [ref=e259]:
+            - text: Let's build
+            - text: something.
+          - paragraph [ref=e260]: Building something interesting? I'm always open to discussing healthcare tech, AI tooling, or open-source collaboration.
+        - generic [ref=e261]:
+          - link "@ nikhiltiwari1057@gmail.com Email" [ref=e262] [cursor=pointer]:
+            - /url: mailto:nikhiltiwari1057@gmail.com
+            - generic [ref=e263]: "@"
+            - generic [ref=e264]:
+              - generic [ref=e265]: nikhiltiwari1057@gmail.com
+              - text: Email
+          - link "</> github.com/nikhil1057 GitHub" [ref=e266] [cursor=pointer]:
+            - /url: https://github.com/nikhil1057
+            - generic [ref=e267]: </>
+            - generic [ref=e268]:
+              - generic [ref=e269]: github.com/nikhil1057
+              - text: GitHub
+          - link "in linkedin.com/in/nikhiltiwari1057 LinkedIn" [ref=e270] [cursor=pointer]:
+            - /url: https://linkedin.com/in/nikhiltiwari1057
+            - generic [ref=e271]: in
+            - generic [ref=e272]:
+              - generic [ref=e273]: linkedin.com/in/nikhiltiwari1057
+              - text: LinkedIn
+      - generic [ref=e274]:
+        - generic [ref=e275]: © 2026 Nikhil Tiwari
+        - generic [ref=e276]: Built with Next.js + Tailwind CSS
+  - alert [ref=e277]

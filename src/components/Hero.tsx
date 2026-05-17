@@ -1,25 +1,24 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const ease = [0.25, 0.4, 0, 1];
+
 export default function Hero() {
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Split background — two contrasting zones */}
+      {/* Split background */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Left warm zone */}
         <div className="absolute top-0 left-0 w-1/2 h-full hero-split-warm" />
-        {/* Right cool zone */}
         <div className="absolute top-0 right-0 w-1/2 h-full hero-split-cool" />
-        {/* Center divider — glowing seam */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-        {/* Geometric accents — asymmetric placement */}
         <div className="hidden md:block absolute top-[12%] left-[6%] w-40 h-40 border border-accent-warm/[0.07] rotate-12" />
         <div className="hidden md:block absolute bottom-[15%] right-[8%] w-28 h-28 rounded-full border border-accent-cool/[0.07]" />
         <div className="hidden md:block absolute top-[55%] left-[15%] w-20 h-[1px] bg-accent-warm/20" />
         <div className="hidden md:block absolute top-[25%] right-[12%] w-[1px] h-20 bg-accent-cool/20" />
-        {/* Large faded type — background texture */}
         <div className="absolute top-[20%] left-[5%] font-display text-[12vw] font-bold text-white/[0.015] select-none leading-none whitespace-nowrap">
           BUILD
         </div>
@@ -30,50 +29,95 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
-        {/* Name — oversized with gradient surname */}
-        <h1 className="anim-name font-display text-[clamp(3.5rem,9vw,9rem)] font-bold leading-[0.82] tracking-[-0.04em] text-[var(--text-primary)]">
-          Nikhil
+        {/* Name with hover micro-interaction */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease, delay: 0.2 }}
+          className="font-display text-[clamp(3.5rem,9vw,9rem)] font-bold leading-[0.82] tracking-[-0.04em] text-[var(--text-primary)]"
+        >
+          <motion.span
+            className="inline-block cursor-default"
+            whileHover={{ scale: 1.02, textShadow: "0 0 40px rgba(232,93,47,0.3)" }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            Nikhil
+          </motion.span>
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-warm via-white/90 to-accent-cool">
+          <motion.span
+            className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-accent-warm via-white/90 to-accent-cool cursor-default"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
             Tiwari
-          </span>
-        </h1>
+          </motion.span>
+        </motion.h1>
 
-        {/* Dual identity — split treatment with visual tension */}
+        {/* Dual identity */}
         <div className="mt-10 md:mt-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-0">
-          <div className="anim-title-left relative">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease, delay: 0.8 }}
+          >
             <span className="font-display text-xl md:text-2xl lg:text-[2rem] font-semibold text-accent-warm glow-warm tracking-tight">
               Full Stack Developer
             </span>
             <span className="block mt-1 text-[10px] uppercase tracking-[0.3em] text-accent-warm/50 font-body">
               Healthcare · Azure · .NET
             </span>
-          </div>
-          <span className="anim-ampersand hidden md:flex mx-6 w-10 h-10 items-center justify-center border border-white/10 rounded-full font-display text-lg text-white/40">
+          </motion.div>
+
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 1.4 }}
+            className="flex mx-0 md:mx-6 w-10 h-10 items-center justify-center border border-white/10 rounded-full font-display text-lg text-white/40"
+          >
             &amp;
-          </span>
-          <div className="anim-title-right relative">
+          </motion.span>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease, delay: 1.1 }}
+          >
             <span className="font-display text-xl md:text-2xl lg:text-[2rem] font-semibold text-accent-cool glow-cool tracking-tight">
               AI Engineer
             </span>
             <span className="block mt-1 text-[10px] uppercase tracking-[0.3em] text-accent-cool/50 font-body">
               Mnemo · Knowledge Graphs · MCP
             </span>
-          </div>
+          </motion.div>
         </div>
 
         {/* Gradient divider */}
-        <div className="anim-line-reveal mt-10 h-[1px] w-full max-w-md bg-gradient-to-r from-accent-warm via-white/20 to-accent-cool" />
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
+          className="mt-10 h-[1px] w-full max-w-md bg-gradient-to-r from-accent-warm via-white/20 to-accent-cool origin-left"
+        />
 
         {/* Bio */}
-        <p className="anim-bio mt-8 max-w-xl text-sm md:text-[15px] text-[var(--text-secondary)] leading-[1.8] font-body">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 1.6 }}
+          className="mt-8 max-w-xl text-sm md:text-[15px] text-[var(--text-secondary)] leading-[1.8] font-body"
+        >
           Full Stack Developer who builds healthcare platforms by day and AI developer tools by night
           — shipping production systems on Azure/AWS while creating open-source tools that give AI
           agents persistent memory.
-        </p>
+        </motion.p>
 
         {/* Social links */}
-        <div className="anim-social mt-8 flex items-center gap-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 1.8 }}
+          className="mt-8 flex items-center gap-6"
+        >
           <a
             href="https://github.com/nikhil1057"
             target="_blank"
@@ -99,14 +143,17 @@ export default function Hero() {
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
             <span className="group-hover:underline">Email</span>
           </a>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="anim-scroll-indicator absolute bottom-8 left-1/2"
+      {/* Scroll indicator with hover interaction */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.2, duration: 0.3 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
         aria-hidden="true"
-        role="presentation"
+        whileHover={{ scale: 1.2 }}
       >
         <svg width="20" height="28" viewBox="0 0 20 28" fill="none" className="text-[var(--text-secondary)]">
           <rect x="1" y="1" width="18" height="26" rx="9" stroke="currentColor" strokeWidth="1.5" />
@@ -114,7 +161,7 @@ export default function Hero() {
             <animate attributeName="cy" values="8;18;8" dur="1.5s" repeatCount="indefinite" />
           </circle>
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }

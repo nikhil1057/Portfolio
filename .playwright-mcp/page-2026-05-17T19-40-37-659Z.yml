@@ -1,0 +1,94 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Adham Dannaway" [ref=e5] [cursor=pointer]:
+        - /url: https://www.adhamdannaway.com/
+      - navigation [ref=e6]:
+        - list:
+          - listitem [ref=e7]:
+            - link "about" [ref=e8] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/about
+          - listitem [ref=e9]:
+            - link "learn" [ref=e10] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/learn-ui-design
+          - listitem [ref=e11]:
+            - link "portfolio" [ref=e12] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/portfolio
+          - listitem [ref=e13]:
+            - link "blog" [ref=e14] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/blog
+          - listitem [ref=e15]:
+            - link "contact" [ref=e16] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/contact
+          - listitem [ref=e17]:
+            - list:
+              - listitem [ref=e18]:
+                - link "twitter" [ref=e19] [cursor=pointer]:
+                  - /url: https://www.twitter.com/AdhamDannaway
+              - listitem [ref=e20]:
+                - link "linkedin" [ref=e21] [cursor=pointer]:
+                  - /url: https://au.linkedin.com/in/adhamdannaway
+              - listitem [ref=e22]:
+                - link "facebook" [ref=e23] [cursor=pointer]:
+                  - /url: https://www.facebook.com/ilikeadham
+              - listitem [ref=e24]:
+                - link "instagram" [ref=e25] [cursor=pointer]:
+                  - /url: https://www.instagram.com/adham.dannaway
+  - generic [ref=e26]:
+    - generic [ref=e30]:
+      - link "designer Product designer specialising in UI design and design systems.":
+        - /url: /portfolio
+        - generic [ref=e32] [cursor=pointer]:
+          - heading "designer" [level=1] [ref=e33]
+          - paragraph [ref=e34]: Product designer specialising in UI design and design systems.
+      - link "<coder> Front end developer who writes clean, elegant and efficient code.":
+        - /url: /about
+        - generic [ref=e36] [cursor=pointer]:
+          - heading "<coder>" [level=1] [ref=e37]
+          - paragraph [ref=e38]: Front end developer who writes clean, elegant and efficient code.
+    - generic [ref=e47]:
+      - heading "Some of my latest work" [level=3] [ref=e49]
+      - list [ref=e50]:
+        - listitem [ref=e51]:
+          - link "Figma design system My Figma design system Design system" [ref=e52] [cursor=pointer]:
+            - /url: https://www.adhamdannaway.com/portfolio/figma-design-system
+            - img "Figma design system" [ref=e53]
+            - generic [ref=e54]:
+              - heading "My Figma design system" [level=4] [ref=e56]
+              - paragraph [ref=e57]: Design system
+        - listitem [ref=e58]:
+          - link "UI design book My UI design book Book" [ref=e59] [cursor=pointer]:
+            - /url: https://www.adhamdannaway.com/portfolio/ui-design-book
+            - img "UI design book" [ref=e60]
+            - generic [ref=e61]:
+              - heading "My UI design book" [level=4] [ref=e63]
+              - paragraph [ref=e64]: Book
+        - listitem [ref=e65]:
+          - link "Creating a lean design system Design system" [ref=e66] [cursor=pointer]:
+            - /url: https://www.adhamdannaway.com/portfolio/creating-a-lean-design-system
+            - generic [ref=e67]:
+              - heading "Creating a lean design system" [level=4] [ref=e69]
+              - paragraph [ref=e70]: Design system
+  - contentinfo [ref=e71]:
+    - generic [ref=e73]:
+      - link "© 2026 Adham Dannaway" [ref=e75] [cursor=pointer]:
+        - /url: https://www.adhamdannaway.com/
+      - navigation [ref=e76]:
+        - list [ref=e77]:
+          - listitem [ref=e78]:
+            - link "about" [ref=e79] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/about
+          - listitem [ref=e80]:
+            - link "learn" [ref=e81] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/learn-ui-design
+          - listitem [ref=e82]:
+            - link "portfolio" [ref=e83] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/portfolio
+          - listitem [ref=e84]:
+            - link "blog" [ref=e85] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/blog
+          - listitem [ref=e86]:
+            - link "contact" [ref=e87] [cursor=pointer]:
+              - /url: https://www.adhamdannaway.com/contact
+    - link "Back to top" [ref=e89] [cursor=pointer]:
+      - /url: "#top"

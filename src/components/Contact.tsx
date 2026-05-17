@@ -1,24 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add("visible"); },
-      { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="contact" ref={ref} className="section-reveal py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto relative">
-      {/* Top border — gradient */}
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto relative"
+    >
+      {/* Top border */}
       <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 lg:left-24 lg:right-24 h-[1px] bg-gradient-to-r from-accent-warm/30 via-white/10 to-accent-cool/30" />
 
       <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
@@ -86,9 +80,9 @@ export default function Contact() {
           © 2026 Nikhil Tiwari
         </span>
         <span className="text-[10px] text-[var(--text-secondary)] font-body">
-          Built with Next.js + Tailwind CSS
+          Built with Next.js + Tailwind CSS + Framer Motion
         </span>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,13 +1,15 @@
 "use client";
 
-export default function Nav() {
-  const links = [
-    { href: "#about", label: "About" },
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
+import { motion } from "framer-motion";
 
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+
+export default function Nav() {
   return (
     <nav
       aria-label="Main navigation"
@@ -20,15 +22,20 @@ export default function Nav() {
         NT<span className="text-accent-warm">.</span>
       </a>
       <ul className="flex gap-6 md:gap-8" role="list">
-        {links.map((link) => (
-          <li key={link.href} className="anim-nav-item">
+        {links.map((link, i) => (
+          <motion.li
+            key={link.href}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 + i * 0.1 }}
+          >
             <a
               href={link.href}
               className="text-[11px] md:text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-[0.2em] font-body focus:outline-none focus:ring-2 focus:ring-accent-warm/50 rounded px-1"
             >
               {link.label}
             </a>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </nav>
