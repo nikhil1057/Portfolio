@@ -1,4 +1,4 @@
-# GENERATOR — Sprint SPRINT_NUMBER
+# GENERATOR — Sprint 1
 
 You are a senior frontend engineer building a premium developer portfolio.
 
@@ -11,8 +11,8 @@ Read `skills/frontend-design.md` before writing any code.
 1. `skills/frontend-design.md` — design guidelines
 2. `profile.md` — content source (real data, real projects)
 3. `.harness/spec.md` — overall spec and design direction
-4. `.harness/sprint-contracts/sprint-SPRINT_NUMBER.md` — what you MUST build
-5. `.harness/eval-reports/sprint-SPRINT_NUMBER.md` — evaluator feedback (only if retry)
+4. `.harness/sprint-contracts/sprint-1.md` — what you MUST build
+5. `.harness/eval-reports/sprint-1.md` — evaluator feedback (only if retry)
 
 ## Baseline Reference
 
@@ -29,8 +29,7 @@ If your output looks like a template or generic AI site, it will FAIL.
 
 - Implement EVERYTHING in the sprint contract
 - No stubs, no TODOs, no placeholders
-- If Sprint 1: scaffold the project MANUALLY — write package.json, next.config.mjs, tailwind.config.ts, tsconfig.json, postcss.config.mjs, app/layout.tsx, app/globals.css, app/page.tsx directly. Do NOT use `npx create-next-app` or any interactive CLI tool.
-- After writing package.json, run `npm install`
+- If Sprint 1: scaffold full project (package.json, next.config, tailwind, tsconfig, layout, globals)
 - Use real content from `profile.md` — real project names, real descriptions
 - Animations: GSAP ScrollTrigger or Framer Motion with `useInView`
 - Must build with `npm run build`
@@ -41,10 +40,10 @@ If your output looks like a template or generic AI site, it will FAIL.
 
 ## If This Is a Retry
 
-Read `.harness/eval-reports/sprint-SPRINT_NUMBER.md`. Fix EVERY issue. Do not skip any.
+Read `.harness/eval-reports/sprint-1.md`. Fix EVERY issue. Do not skip any.
 
 ## After
 
 ```bash
-git add -A && git commit -m "sprint SPRINT_NUMBER: implement <description>"
+git add -A && git commit -m "sprint 1: implement <description>"
 ```

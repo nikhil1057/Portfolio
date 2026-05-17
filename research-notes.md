@@ -7,7 +7,7 @@
 ## 1. Old Portfolio Website
 
 - **Name**: Portfolio (nikhil1057.github.io/Portfolio)
-- **Purpose**: Personal developer portfolio website showcasing Nikhil Tiwari's professional profile as a .NET Full Stack Developer with 6+ years of experience.
+- **Purpose**: Personal developer portfolio website showcasing Nikhil Tiwari's professional profile as a .NET Full Stack Developer with 7+ years of experience.
 - **Tech Stack**: HTML5, CSS3 (Flexbox/Grid), Vanilla JavaScript, Font Awesome icons. Hosted on GitHub Pages.
 - **Architecture**: Single-page static website (1,161 lines in one `index.html` file). No build tools, no frameworks — pure HTML/CSS/JS.
 - **Key Features**:
