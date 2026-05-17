@@ -28,8 +28,6 @@ I have two sides:
 - **Full Stack Developer** — healthcare systems, .NET, Azure, production microservices
 - **AI Engineer** — Mnemo, knowledge graphs, semantic search, harness engineering
 
-Inspired by adhamdannaway.com's split concept. Let the agents decide how to visualize this.
-
 ---
 
 ## About
@@ -231,16 +229,4 @@ Replicated Anthropic's multi-agent harness architecture for autonomous website g
 4. **Production-First Mindset** — Every project has CI/CD, Docker, health checks, audit logging, resilience patterns
 5. **Full-Stack Range** — C# backend, Python APIs, Vue/Angular/React/Next.js frontend, cloud infrastructure
 
----
 
-## Portfolio Website Direction
-
-The portfolio should communicate:
-- A developer who ships real production systems (not just tutorials)
-- Healthcare domain expertise that's rare and valuable
-- AI/open-source work that shows forward-thinking
-- Technical depth (architecture diagrams, not just buzzwords)
-- The contrast: enterprise healthcare by day, cutting-edge AI tools by night
-
-**Tone:** Technical, confident, not flashy. Let the work speak.
-**Aesthetic:** Terminal/developer-focused. Dark theme. Monospace accents. Show code, architecture, real outputs.
