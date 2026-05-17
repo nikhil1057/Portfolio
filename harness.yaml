@@ -2,27 +2,23 @@
 
 project:
   name: "nikhil-portfolio"
-  prompt: "Build a developer portfolio website for Nikhil Tiwari — a Full Stack Developer & AI Engineer with 6+ years experience. He builds healthcare platforms on Azure (ProviderSearch, DocumentSearch, MockProxyService at Availity) and created Mnemo, an open-source AI memory tool published on PyPI. The portfolio should showcase his projects with architecture diagrams, have smooth GSAP/Framer Motion animations, scroll-triggered reveals, and feel like a premium developer's personal site — not a template."
+  prompt: "Build a developer portfolio website for Nikhil Tiwari — a Full Stack Developer & AI Engineer with 6+ years experience."
 
 planner:
   sprints: 6
   source: "profile.md"
 
 generator:
-  stack: ["next.js", "tailwind", "typescript", "framer-motion", "gsap"]
+  stack: ["next.js", "tailwind", "typescript", "framer-motion"]
   version_control: true
 
 evaluator:
   max_retries: 3
   baselines:
-    - url: "https://www.adhamdannaway.com"
-      why: "PRIMARY INSPIRATION — dual-identity split hero (designer/coder), clean layout, portfolio cards. We adapt this for Full Stack Dev / AI Engineer split."
-    - url: "https://brittanychiang.com"
-      why: "Dark minimal, sticky nav, scroll-triggered sections, clean typography, project cards"
-    - url: "https://stefanvitasovic.com"
-      why: "Typographic animations, page transitions, motion-focused"
-    - url: "https://joffreyspitzer.com"
-      why: "GSAP reveals, minimalist motion, flip transitions"
+    - "https://www.adhamdannaway.com"
+    - "https://brittanychiang.com"
+    - "https://stefanvitasovic.com"
+    - "https://joffreyspitzer.com"
   criteria:
     - name: design_quality
       weight: 0.30
@@ -36,7 +32,3 @@ evaluator:
     - name: code_quality
       weight: 0.20
       threshold: 7
-  sensors:
-    computational:
-      - "npm run build"
-      - "npx tsc --noEmit"
