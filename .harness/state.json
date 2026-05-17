@@ -1,0 +1,10 @@
+{
+  "current_sprint": 1,
+  "current_phase": "generator",
+  "planner_done": true,
+  "sprints": {
+    "1": {
+      "contract_done": true
+    }
+  }
+}
