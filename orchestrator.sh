@@ -17,7 +17,7 @@ KIRO_CLI="/Users/nikhil.tiwari/.local/bin/kiro-cli"
 PROMPTS_DIR="$PROJECT_DIR/prompts"
 STATE_FILE="$PROJECT_DIR/.harness/state.json"
 TOTAL_SPRINTS=6
-MAX_RETRIES=1
+MAX_RETRIES=3
 
 BLUE='\033[0;34m'
 GREEN='\033[0;32m'
