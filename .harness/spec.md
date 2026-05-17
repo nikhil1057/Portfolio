@@ -8,45 +8,35 @@ A portfolio that communicates one core message: **Nikhil builds production syste
 
 The site must convey two complementary sides:
 
-1. **Full Stack Developer** — Healthcare systems, .NET/Azure, production microservices, resilience patterns, enterprise-grade architecture
-2. **AI Engineer** — Mnemo, knowledge graphs, semantic search, harness engineering, open-source tooling
+1. **Full Stack Developer** — Healthcare systems, .NET/Azure, production microservices at scale (Availity, Sapiens, Odessa)
+2. **AI Engineer** — Mnemo (persistent memory for AI agents), knowledge graphs, harness engineering, open-source tooling
 
-These aren't separate careers — they're two expressions of the same instinct: build systems that remember, adapt, and just work.
+This duality is the narrative spine. The visitor should feel the tension and synergy between "enterprise reliability" and "frontier experimentation."
 
-## Audience
+## Target Audience
 
-- Engineering managers and technical recruiters evaluating senior-level candidates
+- Engineering managers and recruiters evaluating senior-level candidates
 - Fellow developers discovering Mnemo or exploring collaboration
-- Open-source users wanting to understand the person behind the tool
+- Open-source community members assessing credibility
 
 ## What the Site Must Communicate
 
-| Message | Why It Matters |
-|---------|---------------|
-| 6+ years shipping production systems | Establishes seniority and reliability |
-| Healthcare domain expertise (Aetna, BCBS, Humana, UHC) | Differentiates from generic full-stack devs |
-| Built and published Mnemo (14K lines, PyPI, VS Code extension) | Shows initiative beyond employment |
-| Deep Azure + AWS cross-cloud experience | Signals infrastructure maturity |
-| Production-first mindset (CI/CD, Docker, resilience, audit logging) | Communicates engineering values |
-| Dual identity without fragmentation | Shows range without seeming unfocused |
-
-## Personality & Tone
-
-- Confident but not boastful — let the work speak
-- Technical depth surfaced through specifics, not jargon
-- Dark, minimal aesthetic — the content is the hero
-- Motion used purposefully to guide attention, never to decorate
+1. **Authority** — 6+ years shipping production systems across healthcare, insurance, and fintech
+2. **Range** — Backend (C#, Python), frontend (Vue, Angular, React, Next.js), cloud (Azure, AWS), AI/ML tooling
+3. **Impact** — Quantified results (latency reductions, architecture decisions, lines shipped, test coverage)
+4. **Craft** — The site itself is a portfolio piece; motion, typography, and interaction design matter
+5. **Personality** — Builder mentality, open-source contributor, someone who ships after hours because the problem is interesting
 
 ## Quality Baselines
 
-| Reference | What to Learn |
-|-----------|---------------|
-| adhamdannaway.com | Dual-identity split concept — visually representing two sides of one person |
-| brittanychiang.com | Dark minimal palette, scroll-based sections, clean typography hierarchy |
-| stefanvitasovic.com | Typographic animations that create personality without clutter |
-| joffreyspitzer.com | GSAP/motion reveals, minimalist motion that feels intentional |
+| Reference | Takeaway |
+|-----------|----------|
+| adhamdannaway.com | Dual-identity split concept — visually encode the two sides |
+| brittanychiang.com | Dark minimal palette, scroll-driven sections, clean hierarchy |
+| stefanvitasovic.com | Typographic animations as personality expression |
+| joffreyspitzer.com | GSAP/motion reveals, minimalist choreography, intentional pacing |
 
-The portfolio should synthesize these influences — not copy any single one.
+The portfolio should match or exceed these in perceived quality while being authentically Nikhil's.
 
 ---
 
@@ -54,120 +44,113 @@ The portfolio should synthesize these influences — not copy any single one.
 
 ### Sprint 1 — Foundation & Hero
 
-**Goal:** First impression that communicates dual identity instantly.
+**What:** The first screen. Visitor lands, immediately understands who Nikhil is and what makes him different. The dual identity (Full Stack + AI Engineer) is visually encoded — not just stated in text.
 
-**What:**
-- Landing/hero section that introduces "Nikhil Tiwari — Full Stack Developer & AI Engineer"
-- The dual identity must be visually apparent within 3 seconds of page load
-- Navigation structure established (single-page scroll or minimal routing)
-- Dark theme with considered typography hierarchy
-- Responsive from day one (mobile-first)
+**Why:** First impressions determine whether someone scrolls. The hero must arrest attention and communicate positioning in under 3 seconds.
 
 **Done when:**
-- [ ] Page loads in under 2 seconds on 3G throttle
-- [ ] Dual identity (Full Stack + AI) is visually communicated above the fold
-- [ ] Navigation is functional and accessible (keyboard navigable, proper ARIA)
-- [ ] Typography hierarchy has at least 3 distinct levels
-- [ ] Renders correctly on 375px, 768px, and 1440px viewports
+- [ ] Hero section loads with a typographic or motion-based entrance that communicates the dual identity
+- [ ] Name, title, and one-line bio are visible without scrolling
+- [ ] Dark color palette is established with consistent design tokens
+- [ ] Page scores 90+ on Lighthouse performance (desktop)
+- [ ] Navigation structure is present (even if sections are placeholder)
+- [ ] Site is responsive across mobile, tablet, and desktop breakpoints
 
 ---
 
 ### Sprint 2 — About & Narrative
 
-**Goal:** Visitor understands WHO Nikhil is and WHY he builds what he builds.
+**What:** The story section. Expands on the dual identity — what Nikhil builds at work (healthcare/enterprise) vs. what he builds after hours (AI tooling/Mnemo). Establishes credibility through narrative, not bullet points.
 
-**What:**
-- About section that tells the story: healthcare by day, AI tools by night
-- The "invisible architecture" philosophy communicated clearly
-- 6+ years experience, Bangalore, the trajectory from Odessa → Sapiens → Availity
-- Skills presented in a way that shows depth, not just a tag cloud
-- The section should feel personal — not a resume dump
+**Why:** Recruiters and hiring managers need context. Fellow developers need to understand the depth. This section converts "interesting hero" into "I want to learn more."
 
 **Done when:**
-- [ ] About section conveys the dual-scale narrative (enterprise + open-source)
-- [ ] Career progression is implied without being a timeline
-- [ ] Technical skills are grouped meaningfully (not alphabetical lists)
-- [ ] Section is scannable in 15 seconds but rewards deeper reading
-- [ ] No lorem ipsum or placeholder content — all real copy from profile
+- [ ] About section tells the two-scales story (enterprise by day, AI tools by night)
+- [ ] Key stats are surfaced (6+ years, healthcare platforms, 14K lines in Mnemo, 222 tests)
+- [ ] Section uses scroll-triggered animations that feel intentional, not decorative
+- [ ] Technical skills are communicated without resorting to a grid of logos
+- [ ] Content hierarchy guides the eye — most important information is most prominent
+- [ ] Section works as a standalone read (someone could screenshot it and understand Nikhil)
 
 ---
 
-### Sprint 3 — Work & Projects
+### Sprint 3 — Experience Timeline
 
-**Goal:** Visitor sees WHAT Nikhil has built and the IMPACT of each project.
+**What:** Professional journey presented as a narrative timeline — Odessa → Sapiens → Availity — with emphasis on impact and architecture decisions, not job descriptions.
 
-**What:**
-- Professional work: ProviderSearch Platform, DocumentSearch optimization, MockProxyService
-- Personal projects: Mnemo (hero project), Kiro Harness Engineering
-- Each project communicates: problem → approach → measurable result
-- Mnemo gets elevated treatment — it's the signature project
-- Projects should show range: C#/.NET, Python/FastAPI, TypeScript/Next.js
+**Why:** This is the credibility section. It answers "what has he actually built?" with specifics. Each role should feel like a case study, not a resume entry.
 
 **Done when:**
-- [ ] At least 5 projects displayed with real accomplishments (not descriptions)
-- [ ] Mnemo is visually distinguished as the flagship personal project
-- [ ] Each project has at least one quantified result (latency reduction, line count, test count)
-- [ ] Tech stacks are visible but secondary to impact statements
-- [ ] Projects link to GitHub where applicable
+- [ ] Three roles are presented with company, duration, and role title
+- [ ] Each role highlights 2-3 quantified accomplishments (not responsibilities)
+- [ ] ProviderSearch and DocumentSearch projects are featured with architectural detail
+- [ ] Timeline has visual progression (growth is felt, not just stated)
+- [ ] Animations reveal content progressively as user scrolls
+- [ ] Tech stacks per role are present but subordinate to impact statements
 
 ---
 
-### Sprint 4 — Motion & Interaction
+### Sprint 4 — Projects Showcase
 
-**Goal:** The site feels alive and intentional — motion guides the eye and creates delight.
+**What:** Deep-dive into personal projects — Mnemo as the flagship, Kiro Harness as supporting evidence. These prove Nikhil builds beyond the job.
 
-**What:**
-- Scroll-triggered reveals for sections (not everything at once)
-- Hero animation that draws attention to the dual identity
-- Hover states and micro-interactions on project cards
-- Page transitions or section transitions that feel smooth
-- Motion must be performant — no jank on mid-range devices
+**Why:** Personal projects separate "senior developer" from "senior developer who also creates tools other developers use." Mnemo is the differentiator.
 
 **Done when:**
-- [ ] At least 3 distinct animation types present (reveal, hover, transition)
-- [ ] Animations respect `prefers-reduced-motion` media query
-- [ ] No layout shift caused by animations (CLS = 0)
-- [ ] Animations run at 60fps on a 2020 MacBook Air (no dropped frames)
-- [ ] Motion adds meaning — each animation has a purpose beyond decoration
+- [ ] Mnemo is presented as a flagship project with its own visual treatment
+- [ ] Key metrics are highlighted (100% recall@5, 2ms latency, 8x speedup, 14K lines, PyPI published)
+- [ ] Kiro Harness is presented as a secondary project demonstrating systems thinking
+- [ ] Each project links to GitHub and any live demos
+- [ ] Project cards/sections have interactive elements (hover states, reveals, expandable detail)
+- [ ] The section communicates "builder who ships" — not "student with side projects"
 
 ---
 
 ### Sprint 5 — Contact & Polish
 
-**Goal:** Visitor can reach Nikhil easily. Every detail is refined.
+**What:** Contact section, footer, and full-site interaction polish. Every micro-interaction is intentional. Page transitions, hover states, scroll behaviors are refined.
 
-**What:**
-- Contact section with email, GitHub, LinkedIn — not a generic form
-- Footer with minimal but complete information
-- SEO metadata (title, description, OG tags)
-- Favicon and site identity
-- Loading states, error boundaries, edge cases handled
-- Cross-browser testing (Chrome, Firefox, Safari)
+**Why:** The last 10% of polish is what separates a good portfolio from a memorable one. Contact must be frictionless. Every animation must feel earned.
 
 **Done when:**
-- [ ] All contact links work and open correctly (mailto, external links in new tab)
-- [ ] OG meta tags render a proper preview card when shared on LinkedIn/Twitter
-- [ ] Lighthouse accessibility score ≥ 95
-- [ ] No console errors or warnings in production build
-- [ ] Site works without JavaScript for core content (progressive enhancement)
+- [ ] Contact section with email, GitHub, and LinkedIn — styled, not just links
+- [ ] All page animations are smooth (60fps), purposeful, and non-blocking
+- [ ] Hover states exist on all interactive elements
+- [ ] Scroll-to-section navigation works from the header
+- [ ] No layout shifts, no flash of unstyled content
+- [ ] Full keyboard navigation and focus management (accessibility)
+- [ ] Color contrast meets WCAG AA standards
 
 ---
 
-### Sprint 6 — Performance & Deployment
+### Sprint 6 — Performance, SEO & Deployment
 
-**Goal:** The site is production-ready — fast, accessible, and deployed.
+**What:** Production readiness. The site loads fast, is discoverable, and is deployed to a public URL.
 
-**What:**
-- Performance audit and optimization (images, fonts, bundle size)
-- Final responsive QA across devices
-- Deployment to Vercel/Netlify with custom domain readiness
-- Analytics integration (optional, privacy-respecting)
-- Final visual QA against baseline sites
+**Why:** A portfolio that loads slowly or can't be found defeats its purpose. This sprint ensures the site is as production-grade as the systems Nikhil builds professionally.
 
 **Done when:**
-- [ ] Lighthouse performance score ≥ 90
-- [ ] Total bundle size < 200KB gzipped (excluding images)
-- [ ] First Contentful Paint < 1.5s on cable connection
-- [ ] Site deployed and accessible via public URL
-- [ ] Visual quality subjectively matches the tier of baseline reference sites
-- [ ] All 5 previous sprint criteria still pass (no regressions)
+- [ ] Lighthouse scores: Performance ≥ 95, Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95
+- [ ] Open Graph meta tags render correct preview on LinkedIn/Twitter sharing
+- [ ] Site is deployed to a public URL (Vercel or equivalent)
+- [ ] All images are optimized (WebP/AVIF, lazy-loaded below fold)
+- [ ] Bundle size is under 200KB gzipped (excluding images)
+- [ ] Site works with JavaScript disabled (critical content is server-rendered)
+- [ ] Custom domain is configured (if available)
+
+---
+
+## Non-Goals
+
+- Blog or CMS functionality (not needed now)
+- Backend/database (static site is sufficient)
+- Multi-language support
+- Dark/light theme toggle (dark only — it's a design choice)
+- Analytics dashboard (simple analytics script is fine)
+
+## Success Criteria
+
+The portfolio succeeds when:
+1. A hiring manager spends >60 seconds on the site (engagement)
+2. A developer clicks through to Mnemo's GitHub (conversion)
+3. The site itself demonstrates the technical quality claimed in the content (coherence)
