@@ -1,23 +1,18 @@
 #!/bin/bash
 
 # ============================================================
-# WATCHDOG — Fully autonomous. No manual intervention.
+# WATCHDOG — Monitors harness, kills stuck dev servers.
+# Never kills kiro sessions. Never restarts orchestrator.
 #
-# Monitors the orchestrator, detects stuck processes,
-# kills them, and restarts automatically.
-#
-# Usage: ./watchdog.sh
-# Run in a separate terminal alongside orchestrator.sh
+# Usage: ./watchdog.sh (run in separate terminal)
 # ============================================================
 
 PROJECT_DIR="/Users/nikhil.tiwari/PersonalPortfolio"
-STATE_FILE="$PROJECT_DIR/.harness/state.json"
 STUCK_TIMEOUT=300  # 5 min without progress = stuck
 CHECK_INTERVAL=30
 
 last_commit=""
 last_commit_time=$(date +%s)
-restarts=0
 
 log() { echo "[$(date +%H:%M:%S)] $1"; }
 
@@ -44,31 +39,13 @@ while true; do
 
   log "Status: orch=${ORCH_PID:-dead} kiro=${KIRO_PID:-none} server=${NEXT_PID:-none} idle=${elapsed}s"
 
-  # If stuck: only kill dev server, never kill kiro session
-  # Only consider stuck if NO kiro session is actively running
+  # If stuck and server is running: kill only the dev server
   if [ $elapsed -gt $STUCK_TIMEOUT ]; then
-    KIRO_PID=$(ps aux | grep "kiro-cli.*tmp-\|kiro-cli.*PersonalPortfolio" | grep -v grep | head -1 | awk '{print $2}')
-    if [ -z "$KIRO_PID" ]; then
-      # No kiro running — something is stuck
-      NEXT_PID=$(ps aux | grep "next dev" | grep -v grep | head -1 | awk '{print $2}')
-      if [ -n "$NEXT_PID" ]; then
-        log "⚠ No kiro running + stuck for ${elapsed}s — killing dev server"
-        pkill -f "next dev" 2>/dev/null
-      fi
+    NEXT_PID=$(ps aux | grep "next dev" | grep -v grep | head -1 | awk '{print $2}')
+    if [ -n "$NEXT_PID" ]; then
+      log "⚠ STUCK for ${elapsed}s — killing dev server (PID $NEXT_PID)"
+      pkill -f "next dev" 2>/dev/null
       last_commit_time=$(date +%s)
     fi
-    # If kiro IS running, it's working — don't touch anything
-  fi
-
-  # If orchestrator died, restart it
-  ORCH_PID=$(ps aux | grep "orchestrator.sh" | grep -v grep | head -1 | awk '{print $2}')
-  if [ -z "$ORCH_PID" ]; then
-    restarts=$((restarts + 1))
-    log "⟳ Orchestrator dead — restarting (restart #$restarts)"
-    pkill -f "next dev" 2>/dev/null
-    sleep 2
-    cd "$PROJECT_DIR" && ./orchestrator.sh >> /tmp/orchestrator.log 2>&1 &
-    last_commit_time=$(date +%s)
-    sleep 10
   fi
 done
