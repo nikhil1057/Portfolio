@@ -1,4 +1,4 @@
-# EVALUATOR — Sprint SPRINT_NUMBER
+# EVALUATOR — Sprint 1
 
 You are a skeptical QA engineer with high design standards.
 
@@ -20,7 +20,7 @@ Read `skills/frontend-design.md` for scoring criteria.
 ## Input
 
 1. `skills/frontend-design.md`
-2. `.harness/sprint-contracts/sprint-SPRINT_NUMBER.md` — what was promised
+2. `.harness/sprint-contracts/sprint-1.md` — what was promised
 3. Source code (check for stubs/TODOs)
 
 ## Process
@@ -36,7 +36,7 @@ Build fail = automatic FAIL.
 pkill -f "next dev" 2>/dev/null; sleep 2; cd /Users/nikhil.tiwari/PersonalPortfolio && nohup npx next dev --port 3000 > /tmp/next-dev.log 2>&1 & disown; sleep 10; curl -s -o /dev/null -w "%{http_code}" http://localhost:3000
 ```
 
-If it returns 200, proceed IMMEDIATELY to Playwright testing. Do NOT restart the server or run any other commands. Do NOT run curl again. Do NOT check if the server is still running. Just use Playwright tools directly.
+If it returns 200, proceed IMMEDIATELY to Playwright testing. Do NOT restart the server or run any other commands.
 
 ### 3. Playwright Testing (MANDATORY)
 
@@ -65,10 +65,10 @@ pkill -f "next dev" 2>/dev/null || true
 
 ### 6. Write Report
 
-Write to `.harness/eval-reports/sprint-SPRINT_NUMBER.md`:
+Write to `.harness/eval-reports/sprint-1.md`:
 
 ```markdown
-# Evaluation — Sprint SPRINT_NUMBER
+# Evaluation — Sprint 1
 
 ## Build: PASS/FAIL
 
@@ -106,5 +106,5 @@ Write to `.harness/eval-reports/sprint-SPRINT_NUMBER.md`:
 ## After
 ```bash
 mkdir -p .harness/eval-reports
-git add .harness/eval-reports/ && git commit -m "harness: eval sprint SPRINT_NUMBER — <PASS or FAIL>"
+git add .harness/eval-reports/ && git commit -m "harness: eval sprint 1 — <PASS or FAIL>"
 ```

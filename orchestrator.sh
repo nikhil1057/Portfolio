@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # ============================================================
 # PORTFOLIO HARNESS — Resumable 6-Sprint Orchestrator

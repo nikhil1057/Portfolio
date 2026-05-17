@@ -1,0 +1,13 @@
+{
+  "current_sprint": 1,
+  "current_phase": "evaluator",
+  "planner_done": true,
+  "sprints": {
+    "1": {
+      "contract_done": true,
+      "generator_done": true,
+      "attempts": 2,
+      "eval_result": "FAIL"
+    }
+  }
+}

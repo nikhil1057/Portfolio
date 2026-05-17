@@ -29,7 +29,8 @@ If your output looks like a template or generic AI site, it will FAIL.
 
 - Implement EVERYTHING in the sprint contract
 - No stubs, no TODOs, no placeholders
-- If Sprint 1: scaffold full project (package.json, next.config, tailwind, tsconfig, layout, globals)
+- If Sprint 1: scaffold the project MANUALLY — write package.json, next.config.mjs, tailwind.config.ts, tsconfig.json, postcss.config.mjs, app/layout.tsx, app/globals.css, app/page.tsx directly. Do NOT use `npx create-next-app` or any interactive CLI tool.
+- After writing package.json, run `npm install`
 - Use real content from `profile.md` — real project names, real descriptions
 - Animations: GSAP ScrollTrigger or Framer Motion with `useInView`
 - Must build with `npm run build`

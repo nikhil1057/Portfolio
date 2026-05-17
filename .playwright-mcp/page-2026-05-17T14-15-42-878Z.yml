@@ -1,0 +1,28 @@
+- generic [ref=e1]:
+  - button "Toggle menu" [active] [ref=e56] [cursor=pointer]
+  - main [ref=e13]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: Hi, my name is
+        - heading "Nikhil Tiwari" [level=1] [ref=e19]
+        - heading "Full Stack Developer & AI Engineer |" [level=2] [ref=e54]:
+          - generic [ref=e21]:
+            - text: Full Stack Developer & AI Engineer
+            - generic [ref=e22]: "|"
+        - paragraph [ref=e23]: Full Stack Developer who builds healthcare platforms by day and AI developer tools by night — shipping production systems on Azure/AWS while creating open-source tools that give AI agents persistent memory.
+        - link "Explore my work" [ref=e25] [cursor=pointer]:
+          - /url: "#about"
+      - generic [ref=e26]:
+        - generic [ref=e31]: terminal
+        - generic [ref=e32]:
+          - paragraph [ref=e33]: $ pip install mnemo-dev
+          - paragraph [ref=e34]: Successfully installed mnemo-dev
+          - paragraph [ref=e35]: $ mnemo init
+          - paragraph [ref=e36]: ✓ Knowledge graph initialized
+          - paragraph [ref=e37]: ✓ Memory engine ready
+    - heading "About" [level=2] [ref=e40]
+    - heading "Experience" [level=2] [ref=e43]
+    - heading "Projects" [level=2] [ref=e46]
+    - heading "Mnemo" [level=2] [ref=e49]
+    - heading "Contact" [level=2] [ref=e52]
+  - alert [ref=e53]

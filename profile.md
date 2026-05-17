@@ -12,7 +12,7 @@
 - **Email:** nikhiltiwari1057@gmail.com
 - **GitHub:** github.com/nikhil1057
 - **LinkedIn:** linkedin.com/in/nikhiltiwari1057
-- **Experience:** 6+ years
+- **Experience:** 7+ years
 
 ---
 
@@ -26,7 +26,7 @@ Full Stack Developer who builds healthcare platforms by day and AI developer too
 
 I'm a developer who thrives at the intersection of complex backend systems and emerging AI tooling. By day, I architect healthcare microservices that handle real insurance workflows — provider search, eligibility checks, prior authorizations — across multiple payers on Azure. By night, I build Mnemo, an open-source tool that gives AI coding agents persistent memory through knowledge graphs and semantic search.
 
-I've spent 6 years going deep on .NET, Azure, and healthcare systems. I've designed multi-service architectures, optimized databases, built CI/CD pipelines, and deployed to production. But what excites me most is the frontier — using AI to fundamentally change how developers work.
+I've spent 7 years going deep on .NET, Azure, and healthcare systems. I've designed multi-service architectures, optimized databases, built CI/CD pipelines, and deployed to production. But what excites me most is the frontier — using AI to fundamentally change how developers work.
 
 ---
 
