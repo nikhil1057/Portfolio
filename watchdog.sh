@@ -45,13 +45,19 @@ while true; do
   log "Status: orch=${ORCH_PID:-dead} kiro=${KIRO_PID:-none} server=${NEXT_PID:-none} idle=${elapsed}s"
 
   # If stuck: only kill dev server, never kill kiro session
+  # Only consider stuck if NO kiro session is actively running
   if [ $elapsed -gt $STUCK_TIMEOUT ]; then
-    NEXT_PID=$(ps aux | grep "next dev" | grep -v grep | head -1 | awk '{print $2}')
-    if [ -n "$NEXT_PID" ]; then
-      log "⚠ STUCK for ${elapsed}s — killing dev server"
-      pkill -f "next dev" 2>/dev/null
+    KIRO_PID=$(ps aux | grep "kiro-cli.*tmp-\|kiro-cli.*PersonalPortfolio" | grep -v grep | head -1 | awk '{print $2}')
+    if [ -z "$KIRO_PID" ]; then
+      # No kiro running — something is stuck
+      NEXT_PID=$(ps aux | grep "next dev" | grep -v grep | head -1 | awk '{print $2}')
+      if [ -n "$NEXT_PID" ]; then
+        log "⚠ No kiro running + stuck for ${elapsed}s — killing dev server"
+        pkill -f "next dev" 2>/dev/null
+      fi
+      last_commit_time=$(date +%s)
     fi
-    last_commit_time=$(date +%s)
+    # If kiro IS running, it's working — don't touch anything
   fi
 
   # If orchestrator died, restart it
