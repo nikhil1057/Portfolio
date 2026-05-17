@@ -2,6 +2,43 @@
 
 import { useEffect, useRef, useState } from "react";
 
+function useCountUp(target: number, isVisible: boolean, duration = 800) {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const start = performance.now();
+    const animate = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setValue(Math.round(progress * target));
+      if (progress < 1) rafRef.current = requestAnimationFrame(animate);
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [isVisible, target, duration]);
+
+  return value;
+}
+
+function getYears(duration: string): number {
+  const parts = duration.split("–").map((s) => s.trim());
+  const startYear = parseInt(parts[0].split(" ").pop()!);
+  const endYear = parts[1] === "Present" ? new Date().getFullYear() : parseInt(parts[1].split(" ").pop()!);
+  return endYear - startYear;
+}
+
+function DurationBadge({ duration, isVisible }: { duration: string; isVisible: boolean }) {
+  const years = getYears(duration);
+  const count = useCountUp(years, isVisible);
+  return (
+    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.15em] font-body text-[var(--text-secondary)]">
+      <span className="font-display text-sm font-bold text-[var(--text-primary)]">{count}</span>
+      {years === 1 ? "yr" : "yrs"}
+    </span>
+  );
+}
+
 const roles = [
   {
     company: "Odessa Inc.",
@@ -223,19 +260,22 @@ export default function Experience() {
                     <h3 className="font-display text-xl md:text-2xl font-bold text-[var(--text-primary)]">
                       {role.company}
                     </h3>
-                    <span
-                      className="text-[10px] uppercase tracking-[0.2em] font-body"
-                      style={{
-                        color:
-                          role.accent === "warm"
-                            ? "var(--accent-warm)"
-                            : role.accent === "cool"
-                            ? "var(--accent-cool)"
-                            : "var(--text-secondary)",
-                      }}
-                    >
-                      {role.duration}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <DurationBadge duration={role.duration} isVisible={isVisible} />
+                      <span
+                        className="text-[10px] uppercase tracking-[0.2em] font-body"
+                        style={{
+                          color:
+                            role.accent === "warm"
+                              ? "var(--accent-warm)"
+                              : role.accent === "cool"
+                              ? "var(--accent-cool)"
+                              : "var(--text-secondary)",
+                        }}
+                      >
+                        {role.duration}
+                      </span>
+                    </div>
                   </div>
 
                   <span className="text-xs text-[var(--text-secondary)] font-body">
