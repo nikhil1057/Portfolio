@@ -49,6 +49,12 @@ Use Playwright MCP:
 
 **Do NOT use `browser_take_screenshot`** — use `browser_snapshot` only.
 
+**If Playwright MCP tools are unavailable or fail**, fall back to:
+```bash
+curl -s http://localhost:3000 | head -200
+```
+Then inspect the HTML output and source code files to evaluate. Note in the report that Playwright was unavailable.
+
 ### 4. Score (1-10)
 
 | Criterion | Weight | Threshold | Description |
