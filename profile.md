@@ -22,21 +22,13 @@ Full Stack Developer who builds healthcare platforms by day and AI developer too
 
 ---
 
-## Dual Identity (Hero Concept — inspired by adhamdannaway.com)
+## Dual Identity
 
-The portfolio hero should present TWO SIDES of Nikhil:
+I have two sides:
+- **Full Stack Developer** — healthcare systems, .NET, Azure, production microservices
+- **AI Engineer** — Mnemo, knowledge graphs, semantic search, harness engineering
 
-**LEFT SIDE: Full Stack Developer**
-- Tagline: "I build scalable healthcare systems on Azure"
-- Visual: dark/corporate, structured, clean lines
-- Keywords: .NET 8, Azure, Cosmos DB, Microservices, CI/CD
-
-**RIGHT SIDE: AI Engineer**
-- Tagline: "I give AI agents persistent memory"
-- Visual: glowing/futuristic, nodes/graphs, animated connections
-- Keywords: Knowledge Graphs, Semantic Search, MCP, ONNX, Harness Engineering
-
-The split should be visual — like Adham's designer/coder face split — but adapted for a developer (could be a split terminal, split code editor, split architecture diagram, or abstract geometric split). NOT a face photo split — something more creative and code-focused.
+Inspired by adhamdannaway.com's split concept. Let the agents decide how to visualize this.
 
 ---
 
