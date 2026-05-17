@@ -43,16 +43,16 @@ export default function Nav() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 bg-[#080808]/80 backdrop-blur-lg border-b border-white/[0.04]"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-5 md:px-12 bg-[#080808]/80 backdrop-blur-lg border-b border-white/[0.04]"
     >
       <a
         href="#home"
         onClick={(e) => handleClick(e, "#home")}
-        className="font-display text-lg font-bold text-[var(--text-primary)] hover:text-accent-warm transition-colors"
+        className="font-display text-lg font-bold text-[var(--text-primary)] hover:text-accent-warm transition-colors focus:outline-none focus:ring-2 focus:ring-accent-warm/50 rounded px-1"
       >
         NT<span className="text-accent-warm">.</span>
       </a>
-      <ul className="flex gap-6 md:gap-8" role="list">
+      <ul className="flex gap-4 md:gap-8" role="list">
         {links.map((link, i) => (
           <motion.li
             key={link.href}
@@ -63,7 +63,8 @@ export default function Nav() {
             <a
               href={link.href}
               onClick={(e) => handleClick(e, link.href)}
-              className="text-[11px] md:text-xs uppercase tracking-[0.2em] font-body transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-warm/50 rounded px-1"
+              aria-current={active === link.href ? "page" : undefined}
+              className="text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] font-body transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-warm/50 rounded px-1"
               style={{
                 color: active === link.href ? "var(--accent-warm)" : "var(--text-secondary)",
               }}

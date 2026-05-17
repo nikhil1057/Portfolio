@@ -144,12 +144,12 @@ export default function Projects() {
                   </div>
                 </ExpandableSection>
 
-                <a href="https://github.com/Mnemo-mcp/Mnemo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-xs text-accent-cool font-body group/link relative">
+                <a href="https://github.com/Mnemo-mcp/Mnemo" target="_blank" rel="noopener noreferrer" aria-label="View Mnemo on GitHub" className="inline-flex items-center gap-2 mt-6 text-xs text-accent-cool font-body group/link relative focus:outline-none focus:ring-2 focus:ring-accent-cool/50 rounded px-1">
                   <span className="relative">
                     View on GitHub
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-cool group-hover/link:w-full transition-all duration-200" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-cool group-hover/link:w-full transition-all duration-200" aria-hidden="true" />
                   </span>
-                  <span className="group-hover/link:rotate-12 group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                  <span className="group-hover/link:rotate-12 group-hover/link:translate-x-1 transition-transform duration-200" aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -207,12 +207,12 @@ export default function Projects() {
                   </div>
                 </ExpandableSection>
 
-                <a href="https://github.com/Mnemo-mcp/Harness" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-5 text-xs text-accent-warm font-body group/link relative">
+                <a href="https://github.com/Mnemo-mcp/Harness" target="_blank" rel="noopener noreferrer" aria-label="View Kiro Harness on GitHub" className="inline-flex items-center gap-2 mt-5 text-xs text-accent-warm font-body group/link relative focus:outline-none focus:ring-2 focus:ring-accent-warm/50 rounded px-1">
                   <span className="relative">
                     View on GitHub
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-warm group-hover/link:w-full transition-all duration-200" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-warm group-hover/link:w-full transition-all duration-200" aria-hidden="true" />
                   </span>
-                  <span className="group-hover/link:rotate-12 group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                  <span className="group-hover/link:rotate-12 group-hover/link:translate-x-1 transition-transform duration-200" aria-hidden="true">→</span>
                 </a>
               </div>
             </div>

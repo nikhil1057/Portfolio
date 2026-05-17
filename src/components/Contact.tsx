@@ -18,7 +18,7 @@ export default function Contact() {
 
   return (
     <section id="contact" ref={ref} className="py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto relative">
-      <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 lg:left-24 lg:right-24 h-[1px] bg-gradient-to-r from-accent-warm/30 via-white/10 to-accent-cool/30" />
+      <div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 lg:left-24 lg:right-24 h-[1px] bg-gradient-to-r from-accent-warm/30 via-white/10 to-accent-cool/30" aria-hidden="true" />
 
       <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
         <div>
@@ -50,9 +50,10 @@ export default function Contact() {
             custom={0}
             variants={linkVariant}
             href="mailto:nikhiltiwari1057@gmail.com"
-            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-warm/30 hover:bg-accent-warm/[0.02] transition-all duration-300"
+            aria-label="Email Nikhil Tiwari at nikhiltiwari1057@gmail.com"
+            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-warm/30 hover:bg-accent-warm/[0.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-warm/50"
           >
-            <span className="flex items-center justify-center w-10 h-10 border border-accent-warm/20 text-accent-warm text-sm font-body">@</span>
+            <span className="flex items-center justify-center w-10 h-10 border border-accent-warm/20 text-accent-warm text-sm font-body" aria-hidden="true">@</span>
             <div>
               <span className="block text-sm text-[var(--text-primary)] group-hover:text-accent-warm transition-colors font-body">
                 nikhiltiwari1057@gmail.com
@@ -66,9 +67,10 @@ export default function Contact() {
             href="https://github.com/nikhil1057"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-cool/30 hover:bg-accent-cool/[0.02] transition-all duration-300"
+            aria-label="Nikhil Tiwari on GitHub"
+            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-cool/30 hover:bg-accent-cool/[0.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cool/50"
           >
-            <span className="flex items-center justify-center w-10 h-10 border border-accent-cool/20 text-accent-cool text-sm font-body">&lt;/&gt;</span>
+            <span className="flex items-center justify-center w-10 h-10 border border-accent-cool/20 text-accent-cool text-sm font-body" aria-hidden="true">&lt;/&gt;</span>
             <div>
               <span className="block text-sm text-[var(--text-primary)] group-hover:text-accent-cool transition-colors font-body">
                 github.com/nikhil1057
@@ -82,9 +84,10 @@ export default function Contact() {
             href="https://linkedin.com/in/nikhiltiwari1057"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-cool/30 hover:bg-accent-cool/[0.02] transition-all duration-300"
+            aria-label="Nikhil Tiwari on LinkedIn"
+            className="group flex items-center gap-4 p-5 border border-white/[0.06] hover:border-accent-cool/30 hover:bg-accent-cool/[0.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cool/50"
           >
-            <span className="flex items-center justify-center w-10 h-10 border border-accent-cool/20 text-accent-cool text-sm font-body">in</span>
+            <span className="flex items-center justify-center w-10 h-10 border border-accent-cool/20 text-accent-cool text-sm font-body" aria-hidden="true">in</span>
             <div>
               <span className="block text-sm text-[var(--text-primary)] group-hover:text-accent-cool transition-colors font-body">
                 linkedin.com/in/nikhiltiwari1057
@@ -94,20 +97,6 @@ export default function Contact() {
           </motion.a>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : {}}
-        transition={{ delay: 0.6 }}
-        className="mt-24 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row justify-between items-center gap-4"
-      >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] font-body">
-          © 2026 Nikhil Tiwari
-        </span>
-        <span className="text-[10px] text-[var(--text-secondary)] font-body">
-          Built with Next.js + Tailwind CSS + Framer Motion
-        </span>
-      </motion.div>
     </section>
   );
 }
