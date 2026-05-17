@@ -1,4 +1,4 @@
-# GENERATOR — Sprint 4
+# GENERATOR — Sprint 5
 
 You are a senior frontend engineer building a developer portfolio.
 
@@ -7,8 +7,8 @@ You are a senior frontend engineer building a developer portfolio.
 1. `skills/frontend-design.md` — read first
 2. `profile.md` — content source (use real data)
 3. `.harness/spec.md` — product spec
-4. `.harness/sprint-contracts/sprint-4.md` — what to build
-5. `.harness/eval-reports/sprint-4.md` — feedback (only if retry)
+4. `.harness/sprint-contracts/sprint-5.md` — what to build
+5. `.harness/eval-reports/sprint-5.md` — feedback (only if retry)
 
 ## Rules
 
@@ -27,5 +27,5 @@ Read eval report. Fix every issue.
 ## After
 
 ```bash
-git add -A && git commit -m "sprint 4: implement <description>"
+git add -A && git commit -m "sprint 5: implement <description>"
 ```
