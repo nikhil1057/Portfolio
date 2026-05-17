@@ -17,7 +17,7 @@ KIRO_CLI="/Users/nikhil.tiwari/.local/bin/kiro-cli"
 PROMPTS_DIR="$PROJECT_DIR/prompts"
 STATE_FILE="$PROJECT_DIR/.harness/state.json"
 TOTAL_SPRINTS=6
-MAX_RETRIES=3
+MAX_RETRIES=1
 
 BLUE='\033[0;34m'
 GREEN='\033[0;32m'
@@ -112,8 +112,9 @@ invoke_kiro() {
   log "Spawning: $description"
   cd "$PROJECT_DIR"
   "$KIRO_CLI" chat --no-interactive --trust-all-tools \
-    "Read the file at $prompt_file and execute ALL instructions in it. Do not ask questions. Do not skip steps."
-  success "$description done"
+    "Read the file at $prompt_file and execute ALL instructions in it. Do not ask questions. Do not skip steps. You have full permission to use all tools including Playwright MCP browser tools."
+  # Don't exit on failure
+  return 0
 }
 
 # ============================================================

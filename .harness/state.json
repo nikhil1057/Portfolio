@@ -6,8 +6,7 @@
     "1": {
       "contract_done": true,
       "generator_done": true,
-      "attempts": 2,
-      "eval_result": "FAIL"
+      "attempts": 0
     }
   }
 }
