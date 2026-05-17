@@ -179,9 +179,13 @@ run_evaluator() {
   local sprint=$1
   log "Sprint $sprint — Running Evaluator..."
 
-  # Kill any leftover dev server
+  # Kill any leftover dev server and start fresh
   pkill -f "next dev" 2>/dev/null || true
   sleep 2
+  cd "$PROJECT_DIR"
+  nohup npx next dev --port 3000 > /tmp/next-dev.log 2>&1 & disown
+  sleep 10
+  log "Dev server started"
 
   local eval_prompt="$PROJECT_DIR/.harness/tmp-eval-$sprint.md"
   sed "s/SPRINT_NUMBER/$sprint/g" "$PROMPTS_DIR/evaluator.md" > "$eval_prompt"
