@@ -33,8 +33,10 @@ Build fail = automatic FAIL.
 
 ### 2. Start Server
 ```bash
-nohup npx next dev --port 3000 > /tmp/next-dev.log 2>&1 & disown; sleep 8; curl -s -o /dev/null -w "%{http_code}" http://localhost:3000
+pkill -f "next dev" 2>/dev/null; sleep 2; cd /Users/nikhil.tiwari/PersonalPortfolio && nohup npx next dev --port 3000 > /tmp/next-dev.log 2>&1 & disown; sleep 10; curl -s -o /dev/null -w "%{http_code}" http://localhost:3000
 ```
+
+If it returns 200, proceed IMMEDIATELY to Playwright testing. Do NOT restart the server or run any other commands.
 
 ### 3. Playwright Testing (MANDATORY)
 
