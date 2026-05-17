@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "01.About" [ref=e3] [cursor=pointer]:
+      - /url: "#about"
+      - generic [ref=e4]: "01."
+      - text: About
+    - link "02.Experience" [ref=e5] [cursor=pointer]:
+      - /url: "#experience"
+      - generic [ref=e6]: "02."
+      - text: Experience
+    - link "03.Projects" [ref=e7] [cursor=pointer]:
+      - /url: "#projects"
+      - generic [ref=e8]: "03."
+      - text: Projects
+    - link "04.Mnemo" [ref=e9] [cursor=pointer]:
+      - /url: "#mnemo"
+      - generic [ref=e10]: "04."
+      - text: Mnemo
+    - link "05.Contact" [ref=e11] [cursor=pointer]:
+      - /url: "#contact"
+      - generic [ref=e12]: "05."
+      - text: Contact
+  - main [ref=e13]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: Hi, my name is
+        - heading "Nikhil Tiwari" [level=1] [ref=e19]
+        - heading "|" [level=2] [ref=e20]:
+          - generic [ref=e22]: "|"
+        - paragraph [ref=e23]: Full Stack Developer who builds healthcare platforms by day and AI developer tools by night — shipping production systems on Azure/AWS while creating open-source tools that give AI agents persistent memory.
+        - link "Explore my work" [ref=e25] [cursor=pointer]:
+          - /url: "#about"
+      - generic [ref=e26]:
+        - generic [ref=e31]: terminal
+        - generic [ref=e32]:
+          - paragraph [ref=e33]: $ pip install mnemo-dev
+          - paragraph [ref=e34]: Successfully installed mnemo-dev
+          - paragraph [ref=e35]: $ mnemo init
+          - paragraph [ref=e36]: ✓ Knowledge graph initialized
+          - paragraph [ref=e37]: ✓ Memory engine ready
+    - heading "About" [level=2] [ref=e40]
+    - heading "Experience" [level=2] [ref=e43]
+    - heading "Projects" [level=2] [ref=e46]
+    - heading "Mnemo" [level=2] [ref=e49]
+    - heading "Contact" [level=2] [ref=e52]
+  - alert [ref=e53]

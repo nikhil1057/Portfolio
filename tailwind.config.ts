@@ -1,28 +1,22 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
+        bg: "#0a0a0f",
         surface: "#12121a",
         border: "#1e1e2e",
         accent: "#64ffda",
-        "accent-secondary": "#cba6f7",
+        "accent-purple": "#cba6f7",
         "text-primary": "#e4e4e7",
         "text-muted": "#71717a",
       },
       fontFamily: {
         heading: ["JetBrains Mono", "monospace"],
-        body: ["Inter", "sans-serif"],
+        body: ["Satoshi", "sans-serif"],
         code: ["Fira Code", "monospace"],
-      },
-      maxWidth: {
-        content: "64rem",
       },
     },
   },
