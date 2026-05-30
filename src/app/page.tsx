@@ -25,7 +25,7 @@ export default function Home() {
         <div className="max-w-[1200px] w-full mx-auto relative">
           {/* Portrait - full width */}
           <img
-            src="/profile.png"
+            src="/Portfolio/profile.png"
             alt="Nikhil Tiwari"
             className={`w-[65%] mx-auto h-auto transition-transform duration-700 ease-out ${hovered ? "scale-[1.02]" : "scale-100"}`}
           />
