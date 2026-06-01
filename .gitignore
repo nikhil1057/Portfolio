@@ -1,7 +1,10 @@
 node_modules
 .next
+out
 .DS_Store
 .playwright-mcp
-*.png
-*.jpeg
-!public/**
+next-env.d.ts
+
+# Screenshots (root only)
+/*.png
+/*.jpeg

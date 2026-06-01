@@ -73,15 +73,15 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 gap-3 px-6 py-6 flex-1 items-start">
           <Link href="/ai-engineer" className="group border border-purple-100 rounded-xl p-4 text-center hover:bg-purple-50 transition-all active:scale-95">
-            <p className="text-[9px] uppercase tracking-[0.2em] text-purple-400 font-body mb-1">I teach machines</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-purple-400 font-body mb-1">Building intelligent systems</p>
             <h2 className="text-xl font-display font-bold text-gray-900 leading-tight">ai<br/>engineer</h2>
-            <p className="text-[10px] text-gray-400 mt-2 leading-relaxed">Memory layer for AI agents</p>
+            <p className="text-[10px] text-gray-400 mt-2 leading-relaxed">LLMs · Agents · RAG · MCP</p>
             <span className="inline-block mt-3 text-[10px] text-purple-500 font-body">explore →</span>
           </Link>
           <Link href="/fullstack" className="group border border-teal-100 rounded-xl p-4 text-center hover:bg-teal-50 transition-all active:scale-95">
-            <p className="text-[9px] uppercase tracking-[0.2em] text-teal-500 font-body mb-1">I build systems</p>
-            <h2 className="text-xl font-display font-bold text-gray-900 leading-tight">full stack<br/>developer</h2>
-            <p className="text-[10px] text-gray-400 mt-2 leading-relaxed">Healthcare platforms at scale</p>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-teal-500 font-body mb-1">Building reliable software</p>
+            <h2 className="text-xl font-display font-bold text-gray-900 leading-tight">full stack<br/>engineer</h2>
+            <p className="text-[10px] text-gray-400 mt-2 leading-relaxed">.NET · Angular · Azure · K8s</p>
             <span className="inline-block mt-3 text-[10px] text-teal-500 font-body">explore →</span>
           </Link>
         </div>
@@ -198,25 +198,25 @@ export default function Home() {
               opacity: Math.min(1, (1 - smoothX) * 1.8),
             }}
           >
-            <p className="text-[10px] uppercase tracking-[0.3em] font-body text-purple-500 mb-2">I teach machines</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] font-body text-purple-500 mb-2">Building intelligent systems</p>
             <h2 className={`text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-[0.9] transition-all duration-500 ${hovered === "left" ? "[text-shadow:0_0_30px_rgba(168,85,247,0.3)]" : ""}`}>
               ai<br />engineer
             </h2>
             <p className="text-sm text-gray-500 mt-3 max-w-[170px] leading-relaxed">
-              Building the memory layer for AI agents.
+              LLMs, Agents, RAG &amp; Multi-Agent Systems.
             </p>
             <div className="mt-6 space-y-2">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                <span className="text-[10px] font-body text-purple-400">LLM Agents</span>
+                <span className="text-[10px] font-body text-purple-400">LLMs · Agents · MCP</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse [animation-delay:0.3s]" />
-                <span className="text-[10px] font-body text-teal-400">RAG Pipelines</span>
+                <span className="text-[10px] font-body text-teal-400">RAG · Vector DB · LangGraph</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-purple-300 animate-pulse [animation-delay:0.6s]" />
-                <span className="text-[10px] font-body text-purple-300">Vector Search</span>
+                <span className="text-[10px] font-body text-purple-300">Vision Models · Multi-Agent</span>
               </div>
             </div>
             <span className={`block mt-6 text-sm font-display font-semibold text-purple-600 transition-all duration-300 ${hovered === "left" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
@@ -235,17 +235,17 @@ export default function Home() {
               opacity: Math.min(1, smoothX * 1.8),
             }}
           >
-            <p className="text-[10px] uppercase tracking-[0.3em] font-body text-teal-600 mb-2">I build systems</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] font-body text-teal-600 mb-2">Building reliable software</p>
             <h2 className={`text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-[0.9] transition-all duration-500 ${hovered === "right" ? "[text-shadow:0_0_30px_rgba(20,184,166,0.3)]" : ""}`}>
-              {"<"}full stack<br />developer{"/>"}
+              {"<"}full stack<br />engineer{"/>"}
             </h2>
             <p className="text-sm text-gray-500 mt-3 max-w-[170px] ml-auto leading-relaxed">
-              Shipping production systems at scale.
+              .NET, Angular, Azure &amp; Microservices.
             </p>
             <div className="mt-6 text-left space-y-1.5">
-              <div className="text-[10px] font-body text-gray-300 animate-[typing_2s_steps(20)_forwards] overflow-hidden whitespace-nowrap">{"public async Task<Result>"}</div>
-              <div className="text-[10px] font-body text-teal-400/70 animate-[typing_2s_0.5s_steps(15)_forwards] overflow-hidden whitespace-nowrap">{"  await _service.Execute();"}</div>
-              <div className="text-[10px] font-body text-gray-300 animate-[typing_2s_1s_steps(18)_forwards] overflow-hidden whitespace-nowrap">{"  return Result.Success;"}</div>
+              <div className="text-[10px] font-body text-gray-300 animate-[typing_2s_steps(20)_forwards] overflow-hidden whitespace-nowrap">{".NET · Angular · Azure"}</div>
+              <div className="text-[10px] font-body text-teal-400/70 animate-[typing_2s_0.5s_steps(15)_forwards] overflow-hidden whitespace-nowrap">{"Kubernetes · Redis · SQL"}</div>
+              <div className="text-[10px] font-body text-gray-300 animate-[typing_2s_1s_steps(18)_forwards] overflow-hidden whitespace-nowrap">{"RabbitMQ · Microservices"}</div>
             </div>
             <span className={`block mt-6 text-sm font-display font-semibold text-teal-600 transition-all duration-300 ${hovered === "right" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
               ← Explore Full Stack
@@ -257,10 +257,10 @@ export default function Home() {
             <div className="w-20 h-20 border border-purple-100 rounded-full animate-[spin_12s_linear_infinite]" />
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 2.0 }} className="absolute top-[8%] left-[12%] pointer-events-none z-[5]">
-            <div className="text-[10px] font-body text-purple-200/60 animate-[float_4s_ease-in-out_infinite]">∇loss</div>
+            <div className="text-[10px] font-body text-purple-200/60 animate-[float_4s_ease-in-out_infinite]">agent.run()</div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 1.9 }} className="absolute bottom-[12%] left-[5%] pointer-events-none z-[5]">
-            <div className="text-[11px] font-body text-purple-300/50 animate-[float_3s_ease-in-out_infinite]">y = σ(Wx + b)</div>
+            <div className="text-[11px] font-body text-purple-300/50 animate-[float_3s_ease-in-out_infinite]">embedding = model(query)</div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 2.1 }} className="absolute bottom-[25%] left-[2%] pointer-events-none z-[5]">
             <div className="w-8 h-8 border border-purple-200/30 rotate-45 animate-[float_5s_ease-in-out_infinite_0.5s]" />
@@ -341,10 +341,10 @@ export default function Home() {
             <div className="w-2.5 h-2.5 border border-teal-100/40 rounded-sm rotate-45 animate-[float_4s_ease-in-out_infinite_0.7s]" />
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 2.5 }} className="absolute bottom-[8%] left-[35%] pointer-events-none z-[5]">
-            <div className="text-[9px] font-body text-purple-200/40 animate-[float_6s_ease-in-out_infinite]">torch.nn</div>
+            <div className="text-[9px] font-body text-purple-200/40 animate-[float_6s_ease-in-out_infinite]">vector_db.search()</div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 2.6 }} className="absolute bottom-[10%] right-[32%] pointer-events-none z-[5]">
-            <div className="text-[9px] font-body text-teal-200/40 animate-[float_5s_ease-in-out_infinite_1.5s]">async/await</div>
+            <div className="text-[9px] font-body text-teal-200/40 animate-[float_5s_ease-in-out_infinite_1.5s]">dotnet run</div>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={entered ? { opacity: 1 } : {}} transition={{ delay: 2.8 }} className="absolute bottom-[3%] left-[8%] pointer-events-none z-[5]">
             <div className="w-1 h-1 rounded-full bg-purple-300/30 animate-pulse [animation-delay:1s]" />
