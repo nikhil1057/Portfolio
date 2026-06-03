@@ -8,3 +8,7 @@ next-env.d.ts
 # Screenshots (root only)
 /*.png
 /*.jpeg
+
+# Personal info
+profile.md
+research-notes.md
